@@ -57,12 +57,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _FPS: 10
-    - _IsBlinking: 1
+    - _FPS: 32
+    - _IsBlinking: 0
     - _IsDown: 0
     - _IsInMove: 1
     - _IsLeft: 0
-    - _IsRight: 0
+    - _IsRight: 1
     - _IsShining: 0
     - _IsUp: 0
     - _Level: 0

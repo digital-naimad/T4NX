@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3350390221059525215}
   - component: {fileID: 7988888771851845841}
   m_Layer: 11
-  m_Name: YellowCursorTank
+  m_Name: YellowCursorTank_Animated
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
