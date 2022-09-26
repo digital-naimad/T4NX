@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Fire
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Stage Background
+  - Stage Middle
+  - Stage Front
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3509412371
+    locked: 0
+  - name: StageBackground
+    uniqueID: 2276224789
+    locked: 0
+  - name: StageMiddle
+    uniqueID: 3477662729
+    locked: 0
+  - name: StageFront
+    uniqueID: 3663695469
+    locked: 0
+  - name: Foreplan
+    uniqueID: 274986515
+    locked: 0
+  - name: UI
+    uniqueID: 2113170591
+    locked: 0
