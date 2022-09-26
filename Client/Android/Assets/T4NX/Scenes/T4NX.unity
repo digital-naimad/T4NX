@@ -292,7 +292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 615190193}
   m_Layer: 0
-  m_Name: GameplayRoot
+  m_Name: TVScreenRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -315,6 +315,7 @@ Transform:
   - {fileID: 1251755797}
   - {fileID: 454557180}
   - {fileID: 649282691}
+  - {fileID: 1209702650}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -347,7 +348,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1844533845}
-  - {fileID: 1209702650}
   m_Father: {fileID: 615190193}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1392,7 +1392,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 649282691}
+    m_TransformParent: {fileID: 615190193}
     m_Modifications:
     - target: {fileID: 7901645091294692764, guid: 4e1b7ce9ecf8c1a469b3e34f07af9f7e,
         type: 3}
@@ -1532,7 +1532,7 @@ PrefabInstance:
     - target: {fileID: 7901645091578189341, guid: 4e1b7ce9ecf8c1a469b3e34f07af9f7e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7901645091578189341, guid: 4e1b7ce9ecf8c1a469b3e34f07af9f7e,
         type: 3}
