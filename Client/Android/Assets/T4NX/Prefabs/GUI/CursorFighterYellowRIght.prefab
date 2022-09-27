@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1301532573467744440}
-  - component: {fileID: 5543434547683771010}
+  - component: {fileID: 2940681973303483033}
   m_Layer: 11
   m_Name: CursorFighterYellowRIght
   m_TagString: Untagged
@@ -37,7 +37,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5543434547683771010
+--- !u!114 &2940681973303483033
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -46,9 +46,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1301532573467744391}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14fde5fb2b761974796fa7804b51473f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7c0d2cb1b8524204ca7ce65acf14ba69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _FPS: 0
+  _isBlinking: 0
+  _mask: {x: 0, y: 0, z: 0, w: 0}
+  _baseColor: {r: 1, g: 1, b: 1, a: 1}
+  _colorA: {r: 1, g: 0, b: 0, a: 1}
+  _colorB: {r: 0, g: 1, b: 0, a: 1}
+  _colorC: {r: 0, g: 0, b: 1, a: 1}
+  _noOfFrames: 2
+  _bookSize: 6
+  renderer: {fileID: 4021921053361182588}
 --- !u!1 &7821821536178695166
 GameObject:
   m_ObjectHideFlags: 0

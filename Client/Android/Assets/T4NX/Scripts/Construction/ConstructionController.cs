@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace T4NX
 {
-    public class ConstructionController : GameModeController, IGamepadEventsListener
+    public class ConstructionController : GameplayModeController, IGamepadEventsListener
     {
         [SerializeField] private StageScriptableObject _constructionStage;
         [SerializeField] private StageController _stageController;
@@ -192,7 +192,7 @@ namespace T4NX
 
                   //  _constructionStage.GetTerrainType(iColumn, iRow);
                 }
-            }
+            } 
 
             
         }

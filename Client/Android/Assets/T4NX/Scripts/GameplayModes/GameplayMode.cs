@@ -1,20 +1,25 @@
 namespace T4NX
 {
-    public enum GameType 
+    public enum GameplayMode 
     {
         /// <summary>
         /// Game mode: 1 PLAYER
         /// </summary>
-        OnePlayer,// = 0,
+        Singleplayer,// = 0,
 
         /// <summary>
         /// Game mode: 2 PLAYERS
         /// </summary>
-        TwoPlayers,// = 1,
+        Multiplayer,// = 1,
 
         /// <summary>
         /// Game mode: CONSTRUCTION
         /// </summary>
-        Construction // = 2
+        StageEditor, // = 2
+
+        /// <summary>
+        /// The current count of gameplay modes
+        /// </summary>
+        Count
     }
 }

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7985635837446348307}
-  - component: {fileID: 7985635837446348306}
+  - component: {fileID: 5998886662905374385}
   m_Layer: 0
   m_Name: TwoPlayersMode
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 7985635837979497854}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7985635837446348306
+--- !u!114 &5998886662905374385
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,10 +41,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7985635837446348308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a27b8dd156246f349bc4e053d3aa8894, type: 3}
+  m_Script: {fileID: 11500000, guid: 1085bfe75b778264eaf45893ad0c2a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameType: 1
+  _gameplayMode: 1
 --- !u!1 &7985635837788488233
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb82869a8323bc4b8c8d6aced31309d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameType: 2
+  _gameplayMode: 0
   _constructionStage: {fileID: 11400000, guid: 18b45cb1df27c5b479f21c12db1acd97, type: 2}
   _stageController: {fileID: 0}
   _cursor: {fileID: 0}
@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a27b8dd156246f349bc4e053d3aa8894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameType: 0
+  _gameplayMode: 0
 --- !u!1 &7985635837979497855
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,11 +192,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab9fb776ad0dba645b00e1fc8cc0a891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentGameMode: 2
-  gameModes:
-  - gameMode: 0
-    controller: {fileID: 7985635837925646904}
-  - gameMode: 1
-    controller: {fileID: 7985635837446348306}
-  - gameMode: 2
-    controller: {fileID: 7985635837788488279}
+  gameplayMenu: {fileID: 0}
