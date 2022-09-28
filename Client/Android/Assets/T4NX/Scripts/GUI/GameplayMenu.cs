@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.Sockets;
 using UnityEngine;
 
 namespace T4NX
@@ -77,6 +78,17 @@ namespace T4NX
             for (GameplayMode gameplayOption = 0; gameplayOption < GameplayMode.Count; gameplayOption++)
             {
                 gameplayOptions[(int)gameplayOption].Select(selectedMode == gameplayOption);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void UnselectAll()
+        {
+            for (GameplayMode gameplayOption = 0; gameplayOption < GameplayMode.Count; gameplayOption++)
+            {
+                gameplayOptions[(int)gameplayOption].Select(false);
             }
         }
     }

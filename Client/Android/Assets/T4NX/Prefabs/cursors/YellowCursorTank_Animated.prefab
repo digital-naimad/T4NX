@@ -55,7 +55,6 @@ MonoBehaviour:
   _noOfFrames: 2
   _bookSize: 6
   renderer: {fileID: 838154685571728795}
-  material: {fileID: 0}
 --- !u!1 &5836018482507512089
 GameObject:
   m_ObjectHideFlags: 0
@@ -108,7 +107,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d370da48e36127f47a596a6c34731ee5, type: 2}
+  - {fileID: 2100000, guid: f9dcce9e7aa8f7940b3a618a75e266d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

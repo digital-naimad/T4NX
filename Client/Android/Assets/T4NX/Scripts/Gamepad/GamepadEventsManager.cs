@@ -92,7 +92,7 @@ namespace T4NX
 
         public void SetupListeners(IGamepadEventsListener listeners)
         {
-            //RemoveListeners();
+            RemoveListeners();
 
             currentListeners = listeners;
 

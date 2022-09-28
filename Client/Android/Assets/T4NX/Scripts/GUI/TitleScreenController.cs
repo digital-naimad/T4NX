@@ -25,10 +25,11 @@ namespace T4NX
         /// <summary>
         /// 
         /// </summary>
-        public void ShowWithAnimation()
+        public void ShowWithAnimation(bool isAnimationInstant = true)
         {
             // TODO: setup Tweener
-            titleScreenCanvas.enabled = true;
+            //titleScreenCanvas.enabled = true;
+            titleScreenCanvas.gameObject.SetActive(true);
         }
 
         /// <summary>
@@ -36,7 +37,8 @@ namespace T4NX
         /// </summary>
         public void Hide()
         {
-            titleScreenCanvas.enabled = false;
+            //titleScreenCanvas.enabled = false;
+            titleScreenCanvas.gameObject.SetActive(false);
         }
     }
 }

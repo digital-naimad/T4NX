@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace T4NX
 {
-    public class GameAppController : MonoBehaviour, IGamepadEventsListener
+    public class GameAppController : MonoSingleton<GameAppController>, IGamepadEventsListener
     {
         [SerializeField] private TitleScreenController titleScreenController;
         [SerializeField] private GameplayMenu gameplayMenu;
@@ -21,6 +21,17 @@ namespace T4NX
         {
 
         }
+        #endregion
+
+        #region Public methods
+        public void ReturnToTitleScreen(GameplayMode previousMode)
+        {
+            Debug.Log(name + " >> ReturnToTitleScreen()");
+            SetupGamepadListenersForTitleScreen();
+            gameplayMenu.SelectOption(previousMode);
+            titleScreenController.ShowWithAnimation();
+        }
+
         #endregion
 
         #region Gamepad Events listeners - SELECT & START
@@ -117,7 +128,7 @@ namespace T4NX
         private void Init()
         {
             gameplayMenu.SelectOption(0);
-            GamepadEventsManager.Instance.SetupListeners(this);
+            SetupGamepadListenersForTitleScreen();
         }
         private void LaunchGameplayMode()
         {
@@ -126,11 +137,22 @@ namespace T4NX
 
             GamepadEventsManager.Instance.SetupListeners(gameplayMenu.CurrentGameplayController.GamepadEventsListener);
 
-            titleScreenController.Hide();
+            HideTitleScreen();
 
             gameplayMenu.CurrentGameplayController.Launch();
 
 
+        }
+
+        private void HideTitleScreen()
+        {
+            gameplayMenu.UnselectAll();
+            titleScreenController.Hide();
+        }
+
+        private void SetupGamepadListenersForTitleScreen()
+        {
+            GamepadEventsManager.Instance.SetupListeners(this);
         }
         #endregion
     }

@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: fighterYellow
+  m_Name: cursorTankYellowRight
   m_Shader: {fileID: -6465566751694194690, guid: f30710028c625a64daf00db02888cdd8,
     type: 3}
   m_ValidKeywords: []
@@ -64,7 +64,7 @@ Material:
     - _IsLeft: 0
     - _IsRight: 1
     - _IsShining: 0
-    - _IsUp: 1
+    - _IsUp: 0
     - _Level: 0
     - _QueueControl: 0
     - _QueueOffset: 0

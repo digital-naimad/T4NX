@@ -39,6 +39,7 @@ namespace T4NX
         private Vector2Int CursorPosition { get { return _cursorPosition; } }
         private Vector2Int CurrentBlockIndex { get { return new Vector2Int(CursorPosition.x / _cellSize.x, CursorPosition.y / _cellSize.y); } }
 
+        #region MonoBehaviours life cycle callbacks
         private void Awake()
         {
             this._gamepadEventsListener = this;
@@ -77,8 +78,11 @@ namespace T4NX
                 }
             }
         }
+        #endregion
 
+        //
         // Implementation of abstract method
+        //
         public override void Launch()
         {
             InitConstruction();
@@ -89,6 +93,8 @@ namespace T4NX
             LoadTerrain();
 
             SetCursorPosition(_cursorInitialPosition.x, _cursorInitialPosition.y);
+
+            _cursor.ChangeVisibility(true);
         }
 
         private void LoadTerrain()
@@ -213,7 +219,9 @@ namespace T4NX
 
         public void OnStartPressed(short data)
         {
+            _cursor.ChangeVisibility(false);
 
+            GameAppController.Instance.ReturnToTitleScreen(GameplayMode.StageEditor);
         }
 
         public void OnStartReleased(short data)

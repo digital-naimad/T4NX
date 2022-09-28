@@ -149,6 +149,15 @@ namespace T4NX
             CColor = ScreenPalette.Instance.GetColor((ColorName)colorC);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="isVisible"></param>
+        public void ChangeVisibility(bool isVisible)
+        {
+            renderer.gameObject.SetActive(isVisible);
+        }
+
         protected void SetFloat(string name, float value)
         {
             material.SetFloat(name, value);

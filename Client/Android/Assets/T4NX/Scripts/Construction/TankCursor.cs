@@ -32,7 +32,5 @@ namespace T4NX
         {
             this.transform.position = new Vector3(x, y);
         }
-
-        
     }
 }
