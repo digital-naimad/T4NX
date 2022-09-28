@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace T4NX
 {
-    public class GameplayModeController : MonoBehaviour
+    public abstract class GameplayModeController : MonoBehaviour
     {
         //[SerializeField] protected GameplayMode _gameplayMode;
 
@@ -28,9 +28,17 @@ namespace T4NX
         /// <summary>
         /// 
         /// </summary>
+        /*
         public void SetupGamepadInputListeners()
         {
             GamepadEventsManager.SetupListeners(GamepadEventsListener);
         }
+        */
+
+        /// <summary>
+        /// Abstract method for calling by GameAppController
+        /// </summary>
+        public abstract void Launch();
+
     }
 }

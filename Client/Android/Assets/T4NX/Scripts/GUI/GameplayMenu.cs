@@ -36,27 +36,26 @@ namespace T4NX
         }
 
         /// <summary>
-        /// Decrements gameplay mode options index
+        /// Decrements gameplay mode options index and selects current GameplayModeOption
         /// </summary>
-        public void SwitchOptionUp()
+        public void SwitchToPreviousOption()
         {
             currentlySelectedOption--;
             if (currentlySelectedOption < 0)
             {
-                currentlySelectedOption += (int)GameplayMode.Count;
+                currentlySelectedOption = GameplayMode.Count - 1;
             }
-            //currentlySelectedOption = (GameplayMode)((int)currentlySelectedOption % (int)GameplayMode.Count);
             SelectOption(currentlySelectedOption);
         }
 
         /// <summary>
-        /// Increments gameplay mode options index
+        /// Increments gameplay mode options index and selects current GameplayModeOption
         /// </summary>
-        public void SwitchOptionDown()
+        public void SwitchToNextOption()
         {
             currentlySelectedOption++;
             currentlySelectedOption = (GameplayMode)((int)currentlySelectedOption % (int)GameplayMode.Count);
-            SelectOption(currentlySelectedOption);
+            SelectOption(currentlySelectedOption); 
         }
 
         /// <summary>
@@ -69,8 +68,11 @@ namespace T4NX
             return gameplayOptions[(int)gameplayMode].Controller;
         }
         
-
-        private void SelectOption(GameplayMode selectedMode)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="selectedMode">optional, default value is 0</param>
+        public void SelectOption(GameplayMode selectedMode = 0)
         {
             for (GameplayMode gameplayOption = 0; gameplayOption < GameplayMode.Count; gameplayOption++)
             {

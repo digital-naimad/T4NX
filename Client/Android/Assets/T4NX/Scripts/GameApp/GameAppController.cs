@@ -6,58 +6,27 @@ namespace T4NX
 {
     public class GameAppController : MonoBehaviour, IGamepadEventsListener
     {
+        [SerializeField] private TitleScreenController titleScreenController;
         [SerializeField] private GameplayMenu gameplayMenu;
-
        
 
-        // Start is called before the first frame update
+        #region MonoBehaviour life-cycle methods
         void Start()
         {
-            //LaunchGame();
+            Init();
         }
 
-        // Update is called once per frame
+
         void Update()
         {
 
         }
-
-        private void LaunchGame()
-        {
-
-            Debug.Log(name + " >> LaunchGame() Option: " + (int)gameplayMenu.CurrentlySelectedGameplayMode + " GameplayMode: " + gameplayMenu.CurrentlySelectedGameplayMode);
-            
-            gameplayMenu.CurrentGameplayController.SetupGamepadInputListeners();
-            /*
-            //IGamepadEventsListener listener = gameModes[(int)_currentGameMode].controller.GamepadEventsListener; // % (int)GameType.TwoPlayers
-            IGamepadEventsListener listener = gameplayMenu.GetGameModeController(_currentGameMode).GamepadEventsListener;
-
-
-            SetupGamepadInputListeners(listener);
-
-            switch (_currentGameMode)
-            {
-                case GameplayMode.Construction:
-                    
-                    break;
-
-            }
-            */
-        }
-        /*
-      private void SetupGamepadInputListeners(IGamepadEventsListener listener)
-      {
-          GamepadEventsManager.SetupListeners(listener);
-      }
-      */
-
-
-
+        #endregion
 
         #region Gamepad Events listeners - SELECT & START
         public void OnSelectPressed(short data)
         {
-
+            gameplayMenu.SwitchToNextOption();
         }
 
         public void OnSelectReleased(short data)
@@ -67,7 +36,7 @@ namespace T4NX
 
         public void OnStartPressed(short data)
         {
-
+            LaunchGameplayMode();
         }
 
         public void OnStartReleased(short data)
@@ -144,7 +113,26 @@ namespace T4NX
         }
         #endregion
 
+        #region Private methods
+        private void Init()
+        {
+            gameplayMenu.SelectOption(0);
+            GamepadEventsManager.Instance.SetupListeners(this);
+        }
+        private void LaunchGameplayMode()
+        {
+            Debug.Log(name + " >> LaunchGameplayMode() GameplayMode: " + gameplayMenu.CurrentlySelectedGameplayMode);
 
+
+            GamepadEventsManager.Instance.SetupListeners(gameplayMenu.CurrentGameplayController.GamepadEventsListener);
+
+            titleScreenController.Hide();
+
+            gameplayMenu.CurrentGameplayController.Launch();
+
+
+        }
+        #endregion
     }
 
 }

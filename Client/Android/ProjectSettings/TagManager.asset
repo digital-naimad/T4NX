@@ -57,6 +57,9 @@ TagManager:
   - name: Foreplan
     uniqueID: 274986515
     locked: 0
+  - name: GUI
+    uniqueID: 3762797515
+    locked: 0
   - name: UI
     uniqueID: 2113170591
     locked: 0

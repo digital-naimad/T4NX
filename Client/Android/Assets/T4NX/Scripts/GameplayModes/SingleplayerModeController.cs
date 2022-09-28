@@ -24,6 +24,10 @@ namespace T4NX
 
         }
 
+        public override void Launch()
+        {
+            
+        }
 
         #region Gamepad Events listeners - SELECT & START
         public void OnSelectPressed(short data)
@@ -114,5 +118,7 @@ namespace T4NX
             //Debug.Log(this.name + " >> On A released");
         }
         #endregion
+
+
     }
 }

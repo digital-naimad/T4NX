@@ -42,16 +42,13 @@ namespace T4NX
         private void Awake()
         {
             this._gamepadEventsListener = this;
-
             Time.fixedDeltaTime = 1 / 60;
-
-            //BlockPattern.FillPatternsDictionary();
         }
 
         // Start is called before the first frame update
         void Start()
         {
-            InitConstruction();
+
         }
 
         // Update is called once per frame
@@ -79,6 +76,12 @@ namespace T4NX
                     ChangeCursorPosition(_cellSize.x, 0);
                 }
             }
+        }
+
+        // Implementation of abstract method
+        public override void Launch()
+        {
+            InitConstruction();
         }
 
         private void InitConstruction()
