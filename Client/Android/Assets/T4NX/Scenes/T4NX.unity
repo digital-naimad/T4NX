@@ -447,12 +447,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 675990273}
-  - {fileID: 1251755797}
-  - {fileID: 649282691}
   - {fileID: 454557180}
-  - {fileID: 1180058747}
-  - {fileID: 1209702650}
+  - {fileID: 2135554750}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -479,13 +475,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 649282690}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1844533845}
-  m_Father: {fileID: 615190193}
+  m_Father: {fileID: 2135554750}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &674971113 stripped
@@ -517,13 +513,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 675990272}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 486501917}
-  m_Father: {fileID: 615190193}
+  m_Father: {fileID: 2135554750}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &781229484
@@ -777,7 +773,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1180058746}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -786,8 +782,8 @@ Transform:
   - {fileID: 58158995}
   - {fileID: 2111098037}
   - {fileID: 1399913300}
-  m_Father: {fileID: 615190193}
-  m_RootOrder: 4
+  m_Father: {fileID: 2135554750}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1180058748
 MonoBehaviour:
@@ -801,12 +797,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 517b595d7b4ba364bb9d50801e7f6bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &1209702650 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7901645091578189341, guid: 4e1b7ce9ecf8c1a469b3e34f07af9f7e,
-    type: 3}
-  m_PrefabInstance: {fileID: 7901645092516040423}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1251755796
 GameObject:
   m_ObjectHideFlags: 0
@@ -830,12 +820,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1251755796}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 615190193}
+  m_Father: {fileID: 2135554750}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1339996097
@@ -903,7 +893,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1350801270
 PrefabInstance:
@@ -1541,6 +1531,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2135554749
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2135554750}
+  m_Layer: 0
+  m_Name: ScreenContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2135554750
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135554749}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 675990273}
+  - {fileID: 1251755797}
+  - {fileID: 649282691}
+  - {fileID: 1180058747}
+  m_Father: {fileID: 615190193}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &338755425323844665
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2326,25 +2351,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera 2D
       objectReference: {fileID: 0}
-    - target: {fileID: 7033311760548229693, guid: a6492e79eeab54944bc25e701e875fed,
-        type: 3}
-      propertyPath: terrainPalettes.Array.data[2].AColorName
-      value: 54
-      objectReference: {fileID: 0}
-    - target: {fileID: 7033311760548229693, guid: a6492e79eeab54944bc25e701e875fed,
-        type: 3}
-      propertyPath: terrainPalettes.Array.data[2].CColorName
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7033311760548229693, guid: a6492e79eeab54944bc25e701e875fed,
-        type: 3}
-      propertyPath: terrainPalettes.Array.data[3].AColorName
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7033311760548229695, guid: a6492e79eeab54944bc25e701e875fed,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7033311760548229695, guid: a6492e79eeab54944bc25e701e875fed,
         type: 3}
@@ -2403,7 +2413,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 615190193}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 650556873204803958, guid: 4e1b7ce9ecf8c1a469b3e34f07af9f7e,
         type: 3}
@@ -2548,7 +2558,7 @@ PrefabInstance:
     - target: {fileID: 7901645091578189341, guid: 4e1b7ce9ecf8c1a469b3e34f07af9f7e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7901645091578189341, guid: 4e1b7ce9ecf8c1a469b3e34f07af9f7e,
         type: 3}
