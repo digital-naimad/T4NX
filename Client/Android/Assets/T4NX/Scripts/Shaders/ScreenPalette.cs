@@ -56,7 +56,7 @@ namespace T4NX
             return terrainPalettes[(int)terrainType];//terrainPalettes[Mathf.Clamp((int)terrainType, 0, terrainPalettes.Count) ];
         }
 
-        public SpriteSubpalette GetTankerColors(TankerColor colorOption)
+        public SpriteSubpalette GetTankerColors(TankistColor colorOption)
         {
             Debug.Log(">> tanker subpalette option: " + colorOption);
             return tankersPalettes[(int)colorOption % tankersPalettes.Count];

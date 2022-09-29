@@ -7,7 +7,7 @@ namespace T4NX
     public class Tanker : MonoBehaviour
     {
         [SerializeField] private string tankerName;
-        [SerializeField] private TankerColor tankerColorOption = TankerColor.Yellow;
+        [SerializeField] private TankistColor tankerColorOption = TankistColor.Yellow;
         [SerializeField] private ScreenPalette.SpriteSubpalette _tankerColors;
         [SerializeField] private TankController _tank = null;
 

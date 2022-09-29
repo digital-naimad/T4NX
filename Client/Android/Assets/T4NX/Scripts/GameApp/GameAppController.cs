@@ -27,8 +27,11 @@ namespace T4NX
         public void ReturnToTitleScreen(GameplayMode previousMode)
         {
             Debug.Log(name + " >> ReturnToTitleScreen()");
+
             SetupGamepadListenersForTitleScreen();
+
             gameplayMenu.SelectOption(previousMode);
+
             titleScreenController.ShowWithAnimation();
         }
 

@@ -1,6 +1,6 @@
 namespace T4NX
 {
-    public enum TankerColor 
+    public enum TankistColor 
     {
        Yellow,
        Green,
