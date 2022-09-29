@@ -2326,6 +2326,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera 2D
       objectReference: {fileID: 0}
+    - target: {fileID: 7033311760548229693, guid: a6492e79eeab54944bc25e701e875fed,
+        type: 3}
+      propertyPath: terrainPalettes.Array.data[2].AColorName
+      value: 54
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033311760548229693, guid: a6492e79eeab54944bc25e701e875fed,
+        type: 3}
+      propertyPath: terrainPalettes.Array.data[2].CColorName
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033311760548229693, guid: a6492e79eeab54944bc25e701e875fed,
+        type: 3}
+      propertyPath: terrainPalettes.Array.data[3].AColorName
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7033311760548229695, guid: a6492e79eeab54944bc25e701e875fed,
         type: 3}
       propertyPath: m_RootOrder

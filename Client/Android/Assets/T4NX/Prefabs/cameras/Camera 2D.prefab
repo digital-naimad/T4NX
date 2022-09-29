@@ -146,12 +146,12 @@ MonoBehaviour:
     CColorName: 44
   - colorName: Ice
     baseColorName: 1
-    AColorName: 3
+    AColorName: 54
     BColorName: 1
-    CColorName: 54
+    CColorName: 3
   - colorName: Steel
     baseColorName: 1
-    AColorName: 54
+    AColorName: 3
     BColorName: 1
     CColorName: 54
   - colorName: Water
