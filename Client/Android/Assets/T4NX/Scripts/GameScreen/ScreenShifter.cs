@@ -5,7 +5,7 @@ using DG.Tweening;
 
 namespace T4NX
 {
-    public class ScreenMover : MonoBehaviour
+    public class ScreenShifter : MonoBehaviour
     {
         // Start is called before the first frame update
         void Start()

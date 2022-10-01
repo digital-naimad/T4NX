@@ -107,16 +107,20 @@ namespace T4NX
         public void OnBPressed(short data)
         {
             //isBPressed = true;
+
+            ScreenFader.Instance.Close();
         }
 
         public void OnBReleased(short data)
         {
+            
             //isBPressed = false;
             //Debug.Log(this.name + " >> On B released");
         }
 
         public void OnAPressed(short data)
         {
+            ScreenFader.Instance.Open();
             //isAPressed = true;
         }
 
