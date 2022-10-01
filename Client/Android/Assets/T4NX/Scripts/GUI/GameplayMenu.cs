@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace T4NX
 {
-    public class GameplayMenu : MonoBehaviour
+    public class GameplayMenu : MonoSingleton<GameplayMenu>
     {
         [SerializeField] private GameplayMode currentlySelectedOption = GameplayMode.Singleplayer;
 

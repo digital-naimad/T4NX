@@ -6,9 +6,10 @@ using UnityEngine.UI;
 namespace T4NX
 {
 
-    public class TitleScreenController : MonoBehaviour
+    public class TitleScreenController : MonoSingleton<TitleScreenController>
     {
         [SerializeField] private Canvas titleScreenCanvas;
+        [SerializeField] private GameObject titleScreenContainer;
 
         // Start is called before the first frame update
         void Start()
@@ -25,11 +26,12 @@ namespace T4NX
         /// <summary>
         /// 
         /// </summary>
-        public void ShowWithAnimation(bool isAnimationInstant = true)
+        public void Show(bool isAnimationInstant = true)
         {
             // TODO: setup Tweener
             //titleScreenCanvas.enabled = true;
-            titleScreenCanvas.gameObject.SetActive(true);
+            //titleScreenCanvas.gameObject.SetActive(true);
+            titleScreenContainer.SetActive(true);
 
         }
 
@@ -39,7 +41,8 @@ namespace T4NX
         public void Hide()
         {
             //titleScreenCanvas.enabled = false;
-            titleScreenCanvas.gameObject.SetActive(false);
+            //titleScreenCanvas.gameObject.SetActive(false);
+            titleScreenContainer.SetActive(false);
         }
     }
 }

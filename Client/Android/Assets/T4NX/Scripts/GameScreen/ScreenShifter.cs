@@ -28,7 +28,7 @@ namespace T4NX
         }
 
         private bool isShiftEnded = false;
-        private TweenerCore<Vector3, Vector3, VectorOptions> moveTween;
+        private Tween moveTween;
 
         private void Awake()
         {

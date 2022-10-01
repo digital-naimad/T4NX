@@ -6,8 +6,8 @@ namespace T4NX
 {
     public class GameAppController : MonoSingleton<GameAppController>, IGamepadEventsListener
     {
-        [SerializeField] private TitleScreenController titleScreenController;
-        [SerializeField] private GameplayMenu gameplayMenu;
+        //[SerializeField] private TitleScreenController titleScreenController;
+        //[SerializeField] private GameplayMenu gameplayMenu;
        
 
         #region MonoBehaviour life-cycle methods
@@ -31,9 +31,9 @@ namespace T4NX
 
             SetupGamepadListenersForTitleScreen();
 
-            gameplayMenu.SelectOption(previousMode);
+            GameplayMenu.Instance.SelectOption(previousMode);
 
-            titleScreenController.ShowWithAnimation();
+            TitleScreenController.Instance.Show();
         }
 
         #endregion
@@ -47,7 +47,7 @@ namespace T4NX
             }
             else 
             {
-                gameplayMenu.SwitchToNextOption();
+                GameplayMenu.Instance.SwitchToNextOption();
             }
             
         }
@@ -65,7 +65,8 @@ namespace T4NX
             }
             else
             {
-                LaunchGameplayMode();
+                HideTitleScreen();
+                LaunchStageSelector();
             }
         }
 
@@ -157,30 +158,22 @@ namespace T4NX
 
         private void InitTitleScreen()
         {
-            gameplayMenu.SelectOption(0);
+            GameplayMenu.Instance.SelectOption(0);
         }
 
-        /// <summary>
-        /// Starts currently selected gameplay mode
-        /// </summary>
-        private void LaunchGameplayMode()
+        private void LaunchStageSelector()
         {
-            Debug.Log(name + " >> LaunchGameplayMode() GameplayMode: " + gameplayMenu.CurrentlySelectedGameplayMode);
-
-
-            GamepadEventsManager.Instance.SetupListeners(gameplayMenu.CurrentGameplayController.GamepadEventsListener);
-
-            HideTitleScreen();
-
-            gameplayMenu.CurrentGameplayController.Launch();
-
-
+            Debug.Log(name + " LaunchStageSelector()");
+            StageSelector.Instance.Launch();
         }
+
+      
 
         private void HideTitleScreen()
         {
-            gameplayMenu.UnselectAll();
-            titleScreenController.Hide();
+            Debug.Log(name + " HideTitleScreen()");
+            GameplayMenu.Instance.UnselectAll();
+            TitleScreenController.Instance.Hide();
         }
 
         private void SetupGamepadListenersForTitleScreen()

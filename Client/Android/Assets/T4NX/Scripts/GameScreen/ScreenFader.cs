@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using static T4NX.ScreenShifter;
 
 namespace T4NX
 {
@@ -20,19 +21,22 @@ namespace T4NX
 
         [SerializeField] private float animationDuration = 1.0f;
 
-        private bool IsOpen 
+        public delegate void OnClosingCompletedCallback();
+        public delegate void OnOpeningCompletedCallback();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool IsOpen
         {
             get
             {
                 return _isOpen;
             }
-            set
-            {
-                _isOpen = value;
-                //ApplyFramesPositions();
-            }
         }
 
+        private Tween northOpenTween;
+        private Tween southOpenTween;
 
         private void Awake()
         {
@@ -54,46 +58,59 @@ namespace T4NX
         /// <summary>
         /// 
         /// </summary>
-        public void Open()
+        public void Open(OnOpeningCompletedCallback onCompleteCallback)
         {
             ApplyFramesPositions();
+            ShowFrames();
 
-            northFrame.DOMoveY(northFrameShiftOpen, animationDuration, true);
-            southFrame.DOMoveY(southFrameShiftOpen, animationDuration, true);
+            northOpenTween = northFrame.DOMoveY(northFrameShiftOpen, animationDuration, true);
+            northOpenTween.SetEase(Ease.Linear);
+            northOpenTween.Play();
+
+            southOpenTween = southFrame.DOMoveY(southFrameShiftOpen, animationDuration, true);
+            southOpenTween.SetEase(Ease.Linear);
+            southOpenTween.OnComplete(() => onCompleteCallback());
+            southOpenTween.Play();
 
             // TODO: setup callback?
-            IsOpen = true;
+            _isOpen = true;
 
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public void Close()
+        public void Close(OnClosingCompletedCallback onCompleteCallback)
         {
             ApplyFramesPositions();
+            ShowFrames();
 
-            northFrame.DOMoveY(northFrameShiftClose, animationDuration, true);
-            southFrame.DOMoveY(southFrameShiftClose, animationDuration, true);
+            northOpenTween = northFrame.DOMoveY(northFrameShiftClose, animationDuration, true);
+            northOpenTween.SetEase(Ease.Linear);
+            northOpenTween.Play();
+
+            southOpenTween = southFrame.DOMoveY(southFrameShiftClose, animationDuration, true);
+            southOpenTween.SetEase(Ease.Linear);
+            southOpenTween.OnComplete(() => onCompleteCallback());
+            southOpenTween.Play();
+
             // TODO: setup callback?
-            IsOpen = false;
+            _isOpen = false;
         }
 
-        private void InitFrames()
+        private void ShowFrames()
         {
             // NORTH FRAME
             northFrame.gameObject.SetActive(true);
 
             // SOUTH FRAME
             southFrame.gameObject.SetActive(true);
-
-            ApplyFramesPositions();
         }
 
         private void ApplyFramesPositions()
         {
-            northFrame.position = new Vector3(0, IsOpen ? northFrameShiftOpen : northFrameShiftClose);
-            southFrame.position = new Vector3(0, IsOpen ? southFrameShiftOpen : southFrameShiftClose);
+            northFrame.position = new Vector3(0, _isOpen ? northFrameShiftOpen : northFrameShiftClose);
+            southFrame.position = new Vector3(0, _isOpen ? southFrameShiftOpen : southFrameShiftClose);
         }
     }
 }
