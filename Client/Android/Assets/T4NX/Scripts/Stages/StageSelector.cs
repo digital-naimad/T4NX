@@ -105,7 +105,7 @@ namespace T4NX
             else
             {
                 _selectedStageLabel.enabled = false; //.gameObject.SetActive(false);
-                ScreenFader.Instance.Open(LaunchGameplayMode);
+                ScreenFader.Instance.Open(() => GameAppController.Instance.LaunchSelectedGameplayMode());
             }
         }
 
@@ -200,18 +200,5 @@ namespace T4NX
         {
             _currentStageIndex = Mathf.Clamp(_currentStageIndex - 1, 0, CurrentStageLimit - 1);
         }
-
-        /// <summary>
-        /// Starts currently selected gameplay mode
-        /// </summary>
-        private void LaunchGameplayMode()
-        {
-            Debug.Log(name + " >> LaunchGameplayMode() GameplayMode: " + GameplayMenu.Instance.CurrentlySelectedGameplayMode);
-
-            GamepadEventsManager.Instance.SetupListeners(GameplayMenu.Instance.CurrentGameplayController.GamepadEventsListener);
-
-            GameplayMenu.Instance.CurrentGameplayController.Launch();
-        }
-
     }
 }

@@ -36,6 +36,19 @@ namespace T4NX
             TitleScreenController.Instance.Show();
         }
 
+
+        /// <summary>
+        /// Starts currently selected gameplay mode
+        /// </summary>
+        public void LaunchSelectedGameplayMode()
+        {
+            Debug.Log(name + " >> LaunchGameplayMode() GameplayMode: " + GameplayMenu.Instance.CurrentlySelectedGameplayMode);
+
+            GamepadEventsManager.Instance.SetupListeners(GameplayMenu.Instance.CurrentGameplayController.GamepadEventsListener);
+
+            GameplayMenu.Instance.CurrentGameplayController.Launch();
+        }
+
         #endregion
 
         #region Gamepad Events listeners - SELECT & START
@@ -66,7 +79,15 @@ namespace T4NX
             else
             {
                 HideTitleScreen();
-                LaunchStageSelector();
+                if (GameplayMenu.Instance.CurrentlySelectedGameplayMode == GameplayMode.StageEditor)
+                {
+                    LaunchSelectedGameplayMode();
+                }
+                else
+                {
+                    LaunchStageSelector();
+                }
+                
             }
         }
 
