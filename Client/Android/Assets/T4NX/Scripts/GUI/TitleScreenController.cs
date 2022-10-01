@@ -30,6 +30,7 @@ namespace T4NX
             // TODO: setup Tweener
             //titleScreenCanvas.enabled = true;
             titleScreenCanvas.gameObject.SetActive(true);
+
         }
 
         /// <summary>

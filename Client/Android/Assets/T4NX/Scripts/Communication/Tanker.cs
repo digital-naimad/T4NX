@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace T4NX
 {
-    public class Tanker : MonoBehaviour
+    public class Tankist : MonoBehaviour
     {
         [SerializeField] private string tankerName;
         [SerializeField] private TankistColor tankerColorOption = TankistColor.Yellow;

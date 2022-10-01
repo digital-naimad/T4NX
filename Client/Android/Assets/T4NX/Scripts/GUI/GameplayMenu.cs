@@ -24,6 +24,12 @@ namespace T4NX
 
         public GameplayMode CurrentlySelectedGameplayMode { get => currentlySelectedOption; }
 
+
+        private void Awake()
+        {
+            UnselectAll();    
+        }
+
         // Start is called before the first frame update
         void Start()
         {

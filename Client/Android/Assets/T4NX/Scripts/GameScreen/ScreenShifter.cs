@@ -2,21 +2,75 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Options;
 
 namespace T4NX
 {
-    public class ScreenShifter : MonoBehaviour
+    public class ScreenShifter : MonoSingleton<ScreenShifter>
     {
+        [SerializeField] private int initPositionY = -240;
+        [SerializeField] private int finalPositionY = 0;
+
+        [SerializeField] private float animationDuration = 4.0f;
+
+        public delegate void OnMoveInCompletedCallback();
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool IsShiftEnded
+        {
+            get 
+            { 
+                return isShiftEnded; 
+            }
+        }
+
+        private bool isShiftEnded = false;
+        private TweenerCore<Vector3, Vector3, VectorOptions> moveTween;
+
+        private void Awake()
+        {
+            ApplyInitPosition();
+        }
+
         // Start is called before the first frame update
         void Start()
         {
-            //DOTween
+
         }
 
         // Update is called once per frame
         void Update()
         {
 
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void MoveIn(OnMoveInCompletedCallback onCompleteCallback)
+        {
+            moveTween = transform.DOMoveY(finalPositionY, animationDuration, true);
+            moveTween.SetEase(Ease.Linear);
+            moveTween.OnComplete(() => { isShiftEnded = true; });
+            moveTween.OnComplete(() => onCompleteCallback());
+            moveTween.Play();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void ForceEnd()
+        {
+            moveTween.Complete();
+            isShiftEnded = true;
+        }
+
+        private void ApplyInitPosition()
+        {
+            transform.position = new Vector3(0, initPositionY);
         }
     }
 

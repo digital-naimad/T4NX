@@ -13,7 +13,8 @@ namespace T4NX
         #region MonoBehaviour life-cycle methods
         void Start()
         {
-            Init();
+            LaunchGame();
+
         }
 
 
@@ -40,7 +41,15 @@ namespace T4NX
         #region Gamepad Events listeners - SELECT & START
         public void OnSelectPressed(short data)
         {
-            gameplayMenu.SwitchToNextOption();
+            if (!ScreenShifter.Instance.IsShiftEnded)
+            {
+                ScreenShifter.Instance.ForceEnd();
+            }
+            else 
+            {
+                gameplayMenu.SwitchToNextOption();
+            }
+            
         }
 
         public void OnSelectReleased(short data)
@@ -50,7 +59,14 @@ namespace T4NX
 
         public void OnStartPressed(short data)
         {
-            LaunchGameplayMode();
+            if (!ScreenShifter.Instance.IsShiftEnded)
+            {
+                ScreenShifter.Instance.ForceEnd();
+            }
+            else
+            {
+                LaunchGameplayMode();
+            }
         }
 
         public void OnStartReleased(short data)
@@ -108,7 +124,7 @@ namespace T4NX
         {
             //isBPressed = true;
 
-            ScreenFader.Instance.Close();
+            //ScreenFader.Instance.Close();
         }
 
         public void OnBReleased(short data)
@@ -120,7 +136,7 @@ namespace T4NX
 
         public void OnAPressed(short data)
         {
-            ScreenFader.Instance.Open();
+            //ScreenFader.Instance.Open();
             //isAPressed = true;
         }
 
@@ -132,11 +148,21 @@ namespace T4NX
         #endregion
 
         #region Private methods
-        private void Init()
+        private void LaunchGame()
+        {
+            SetupGamepadListenersForTitleScreen();
+            ScreenShifter.Instance.MoveIn(InitTitleScreen);
+          
+        }
+
+        private void InitTitleScreen()
         {
             gameplayMenu.SelectOption(0);
-            SetupGamepadListenersForTitleScreen();
         }
+
+        /// <summary>
+        /// Starts currently selected gameplay mode
+        /// </summary>
         private void LaunchGameplayMode()
         {
             Debug.Log(name + " >> LaunchGameplayMode() GameplayMode: " + gameplayMenu.CurrentlySelectedGameplayMode);

@@ -7,7 +7,7 @@ namespace T4NX
 {
     public class ScreenFader : MonoSingleton<ScreenFader>
     {
-        [SerializeField] private float animationDuration = 1.0f;
+        [SerializeField] private bool _isOpen = true;
 
         [SerializeField] private Transform northFrame;
         [SerializeField] private Transform southFrame;
@@ -18,12 +18,25 @@ namespace T4NX
         [SerializeField] private int southFrameShiftOpen = -120;
         [SerializeField] private int southFrameShiftClose = 0;
 
-        private bool isOpen = true;
+        [SerializeField] private float animationDuration = 1.0f;
+
+        private bool IsOpen 
+        {
+            get
+            {
+                return _isOpen;
+            }
+            set
+            {
+                _isOpen = value;
+                //ApplyFramesPositions();
+            }
+        }
 
 
         private void Awake()
         {
-            InitFrames();
+            //InitFrames();
         }
 
         // Start is called before the first frame update
@@ -43,8 +56,14 @@ namespace T4NX
         /// </summary>
         public void Open()
         {
+            ApplyFramesPositions();
+
             northFrame.DOMoveY(northFrameShiftOpen, animationDuration, true);
             southFrame.DOMoveY(southFrameShiftOpen, animationDuration, true);
+
+            // TODO: setup callback?
+            IsOpen = true;
+
         }
 
         /// <summary>
@@ -52,8 +71,12 @@ namespace T4NX
         /// </summary>
         public void Close()
         {
+            ApplyFramesPositions();
+
             northFrame.DOMoveY(northFrameShiftClose, animationDuration, true);
             southFrame.DOMoveY(southFrameShiftClose, animationDuration, true);
+            // TODO: setup callback?
+            IsOpen = false;
         }
 
         private void InitFrames()
@@ -69,8 +92,8 @@ namespace T4NX
 
         private void ApplyFramesPositions()
         {
-            northFrame.position = new Vector3(0, isOpen ? northFrameShiftOpen : northFrameShiftClose);
-            southFrame.position = new Vector3(0, isOpen ? southFrameShiftOpen : southFrameShiftClose);
+            northFrame.position = new Vector3(0, IsOpen ? northFrameShiftOpen : northFrameShiftClose);
+            southFrame.position = new Vector3(0, IsOpen ? southFrameShiftOpen : southFrameShiftClose);
         }
     }
 }
