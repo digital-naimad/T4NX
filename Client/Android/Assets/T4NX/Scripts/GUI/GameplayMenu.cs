@@ -27,7 +27,7 @@ namespace T4NX
 
         private void Awake()
         {
-            //UnselectAll();    
+            UnselectAll();    
         }
 
         // Start is called before the first frame update

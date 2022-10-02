@@ -8,30 +8,14 @@ namespace T4NX
     [CreateAssetMenu(fileName = "Stage_", menuName = "Stages/Stage", order = 2)]
     public class StageScriptableObject : ScriptableObject
     {
-        //private static int StagesCounter = 0;
-
-        //[SerializeField] private string _stageName = "Stage_" + (StageScriptableObject.StagesCounter++);
-
         [SerializeField] private int gridSizeX = StageSettings.DefaultGridSize.x;
         [SerializeField] private int gridSizeY = StageSettings.DefaultGridSize.y;
 
-        //[SerializeField] private string[] terrainPreview;
-        //[SerializeField] private char[,] terrainGrid = new char[StageSettings.DefaultGridSize.y, StageSettings.DefaultGridSize.x];
-       // [SerializeField] private byte[,] terrainGrid = new byte[StageSettings.DefaultGridSize.y, StageSettings.DefaultGridSize.x];
         [SerializeField] private byte[] terrainData = new byte[StageSettings.DefaultGridSize.y * StageSettings.DefaultGridSize.x];
-
-        // [SerializeField] private List<string> _gridList = new List<string>();
-        //[SerializeField] private List<List<char>> _terrainGrid = new List<List<char>>();
-        // [SerializeField] private char[,] _terrainGrid = { { 'E' } };
 
         [SerializeField] private List<Vector2Int> _playerSpawnPoints = new List<Vector2Int>();
         [SerializeField] private List<Vector2Int> _enemySpawnPoints = new List<Vector2Int>();
         [SerializeField] private List<Vector2Int> _playerBasePoints = new List<Vector2Int>();
-
-        //public string StageName
-        //{
-            //get { return _stageName; }
-        //}
 
         public int GridSizeX
         {
