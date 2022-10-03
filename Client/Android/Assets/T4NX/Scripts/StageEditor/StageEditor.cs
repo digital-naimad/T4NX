@@ -22,6 +22,11 @@ namespace T4NX
         [SerializeField] private TMP_InputField stageSizeXInputField;
         [SerializeField] private TMP_InputField stageSizeYInputField;
 
+        [SerializeField] private TMP_InputField enemyBasicTankInputField;
+        [SerializeField] private TMP_InputField enemyFastTankInputField;
+        [SerializeField] private TMP_InputField enemyPowerTankInputField;
+        [SerializeField] private TMP_InputField enemyArmorTankInputField;
+
 
         [SerializeField] private string stagesDataPath = "Assets/T4NX/Data/Stages/";
         [SerializeField] private string filePrefix = "Stage_";
@@ -97,6 +102,26 @@ namespace T4NX
 
             stageData.ChangeBlock(positionOnGrid.y, positionOnGrid.x, terrainType);
             stageData.ApplyToAsset();
+        }
+
+        public void UpdateBasicTankAmount()
+        {
+            stageData.SetEnemyTypeAmount(EnemyType.BasicTank, int.Parse(enemyBasicTankInputField.text));
+        }
+
+        public void UpdateFastTankAmount()
+        {
+            stageData.SetEnemyTypeAmount(EnemyType.FastTank, int.Parse(enemyFastTankInputField.text));
+        }
+
+        public void UpdatePowerTankAmount()
+        {
+            stageData.SetEnemyTypeAmount(EnemyType.PowerTank, int.Parse(enemyPowerTankInputField.text));
+        }
+
+        public void UpdateArmorTankAmount()
+        {
+            stageData.SetEnemyTypeAmount(EnemyType.ArmorTank, int.Parse(enemyArmorTankInputField.text));
         }
 
         /// <summary>
@@ -267,5 +292,7 @@ namespace T4NX
 
             stageData.AddPlayerBasePoint(new Vector2Int(112, 16));
         }
+
+
     }
 }
