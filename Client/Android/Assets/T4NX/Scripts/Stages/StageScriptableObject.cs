@@ -347,6 +347,7 @@ namespace T4NX
 
         public void ApplyToAsset()
         {
+            /*
 #if UNITY_EDITOR
 
 
@@ -355,6 +356,7 @@ namespace T4NX
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
 #endif
+            */
         }
     }
 }

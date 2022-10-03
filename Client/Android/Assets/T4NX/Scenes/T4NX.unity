@@ -457,18 +457,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &578489109 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3974000294958276889, guid: 423c17d5dd73cb446aba3efb8f2809e9,
-    type: 3}
-  m_PrefabInstance: {fileID: 3974000295460088332}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8cde2b5aa1384d47b1e62d19d21a05d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &594276901
 GameObject:
   m_ObjectHideFlags: 0
@@ -653,7 +641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &781229485
 Transform:
   m_ObjectHideFlags: 0
@@ -1910,6 +1898,18 @@ PrefabInstance:
       propertyPath: tanksManager
       value: 
       objectReference: {fileID: 832605812}
+    - target: {fileID: 618443106888115299, guid: b595e485042da634dac245fab73182b0,
+        type: 3}
+      propertyPath: _currentStage
+      value: 
+      objectReference: {fileID: 11400000, guid: 9ee2f0a4c1189e14398006d906de3b98,
+        type: 2}
+    - target: {fileID: 618443106888115299, guid: b595e485042da634dac245fab73182b0,
+        type: 3}
+      propertyPath: _defaultStage
+      value: 
+      objectReference: {fileID: 11400000, guid: d2eba96e90a5ab64b859971310bcc05b,
+        type: 2}
     - target: {fileID: 618443106888115299, guid: b595e485042da634dac245fab73182b0,
         type: 3}
       propertyPath: playfieldRoot
@@ -3370,7 +3370,7 @@ PrefabInstance:
         type: 3}
       propertyPath: gameplayMenu
       value: 
-      objectReference: {fileID: 578489109}
+      objectReference: {fileID: 0}
     - target: {fileID: 7985635837979497853, guid: 585b16c619069ef44b448ae39bf0be59,
         type: 3}
       propertyPath: titleScreenController

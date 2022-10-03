@@ -12,7 +12,7 @@ namespace T4NX
         [SerializeField] private int _currentStageIndex = 0;
 
         [SerializeField] private TextMeshProUGUI _selectedStageLabel;
-        [SerializeField] private List<StageScriptableObject> stageScriptableObject;
+        [SerializeField] private List<StageScriptableObject> stagesList = new List<StageScriptableObject>();
 
         [SerializeField] private int CurrentStageLimit
         {
@@ -105,7 +105,20 @@ namespace T4NX
             else
             {
                 _selectedStageLabel.enabled = false; //.gameObject.SetActive(false);
-                ScreenFader.Instance.Open(() => GameAppController.Instance.LaunchSelectedGameplayMode());
+
+                // TODO: load stage 
+                if (StageController.Instance.WasStageModifiedByConstruction)
+                {
+                    // TODO: send stage to the server?
+                    ScreenFader.Instance.Open(() => GameAppController.Instance.LaunchSelectedGameplayMode());
+                }
+                else
+                {
+                    //StageController.Instance.SetCurrentStage();
+                }
+               
+
+                
             }
         }
 
@@ -199,6 +212,21 @@ namespace T4NX
         private void DecrementStageIndex()
         {
             _currentStageIndex = Mathf.Clamp(_currentStageIndex - 1, 0, CurrentStageLimit - 1);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="index"></param>
+        /// <returns>null if there is no any StageScriptableObject in the list</returns>
+        private StageScriptableObject GetStageData(int index)
+        {
+            if (stagesList.Count == 0)
+            {
+                return null;
+            }
+
+            return stagesList[index];
         }
     }
 }
