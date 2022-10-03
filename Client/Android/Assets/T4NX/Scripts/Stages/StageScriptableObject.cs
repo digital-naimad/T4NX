@@ -17,13 +17,12 @@ namespace T4NX
         [SerializeField] private List<Vector2Int> _enemySpawnPoints = new List<Vector2Int>();
         [SerializeField] private List<Vector2Int> _playerBasePoints = new List<Vector2Int>();
 
+        [SerializeField] private List<byte> _enemyTypeAmounts = new List<byte>();
         public int GridSizeX
         {
             get 
             {
-                //return _terrainGrid.GetLength(1);//_gridList[0].Length; 
-
-                return gridSizeX;// terrainGrid.GetLength(1);// terrainPreview[0].Length;
+                return gridSizeX;
             }
 
         }
@@ -32,8 +31,7 @@ namespace T4NX
         {
             get
             {
-                //return _terrainGrid.GetLength(0);//_gridList.Count;
-                return gridSizeY; // terrainGrid.GetLength(0); // terrainPreview.Length;
+                return gridSizeY;
             }
         }
 
@@ -60,6 +58,8 @@ namespace T4NX
                 return _playerBasePoints.Count;
             }
         }
+
+
 
         public StageScriptableObject()
         {
@@ -297,6 +297,16 @@ namespace T4NX
         public Vector2Int GetEnemySpawnPoint(int index)
         {
             return _enemySpawnPoints[index % _enemySpawnPoints.Count];
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="enemyType"></param>
+        /// <returns></returns>
+        public int GetEnemyTypeAmount(EnemyType enemyType)
+        {
+            return _enemyTypeAmounts[(int)enemyType];
         }
 
         /// <summary>

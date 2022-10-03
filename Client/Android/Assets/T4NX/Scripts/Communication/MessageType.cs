@@ -32,9 +32,9 @@ namespace T4NX
         //  both ways  <=>
 
         /// <summary>
-        /// [ T ]errain
+        /// [ S ]tage
         /// </summary>
-        T,
+        S,
         Chat,
     }
 }

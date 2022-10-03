@@ -73,7 +73,7 @@ namespace T4NX
             patternDictionary.Add(BlockType.WaterFull, new BlockPattern(TerrainType.Water, TerrainType.Water, TerrainType.Water, TerrainType.Water, BlockType.WaterFull));
 
             // Bush full
-            patternDictionary.Add(BlockType.BushFull, new BlockPattern(TerrainType.Bush, TerrainType.Bush, TerrainType.Bush, TerrainType.Bush, BlockType.BushFull));
+            patternDictionary.Add(BlockType.BushFull, new BlockPattern(TerrainType.Trees, TerrainType.Trees, TerrainType.Trees, TerrainType.Trees, BlockType.BushFull));
 
             // Ice full
             patternDictionary.Add(BlockType.IceFull, new BlockPattern(TerrainType.Ice, TerrainType.Ice, TerrainType.Ice, TerrainType.Ice, BlockType.IceFull));

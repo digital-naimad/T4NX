@@ -36,6 +36,8 @@ namespace T4NX
 
         private List<Vector2Int> playerBasePoints = new List<Vector2Int>();
 
+        private List<int> enemyTypesAmount = new List<int>();
+
         void Start()
         {
             SendMessagesSequence();
@@ -55,7 +57,7 @@ namespace T4NX
         {
             switch (message.Type)
             {
-                case nameof(MessageType.T): // Sends default stage
+                case nameof(MessageType.S): // Sends default stage
                     gridSizeX = message.GetInt(0);
                     gridSizeY = message.GetInt(1);
                     terrainData = message.GetByteArray(2);
@@ -102,7 +104,7 @@ namespace T4NX
                     }
                     */
 
-                    SendTerrainMessage();
+                    SendStageMessage();
                     break;
             }
         }
@@ -115,9 +117,9 @@ namespace T4NX
         /// <summary>
         /// Prepares and sends terrainData to the client
         /// </summary>
-        private void SendTerrainMessage()
+        private void SendStageMessage()
         {
-            Message messageToSend = Message.Create(nameof(MessageType.T)); // message type
+            Message messageToSend = Message.Create(nameof(MessageType.S)); // message type
 
             messageToSend.Add(gridSizeX); // 0
             messageToSend.Add(gridSizeY); // 1
@@ -145,6 +147,13 @@ namespace T4NX
             {
                 messageToSend.Add(playerBasePoints[i].x); // n+m+4+i
                 messageToSend.Add(playerBasePoints[i].y); // n+m+4+i+1
+            }
+
+            // Enemy type amounts
+            messageToSend.Add(enemyTypesAmount.Count);
+            for (int i = 0; i < enemyTypesAmount.Count; i++)
+            {
+                messageToSend.Add(enemyTypesAmount[i]);
             }
 
             // Debug.Log(">> DummyServer >> spawnPointsX[i] " + spawnPointsX[i]);

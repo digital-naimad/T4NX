@@ -67,7 +67,7 @@ namespace T4NX
                     //BaseColor = Color.white;
                     ScreenLayer = ScreenLayers.StageMiddle;
                     break;
-                case TerrainType.Bush:
+                case TerrainType.Trees:
                     FPS = 0;
                     Mask = Vector4.zero;
                     //BaseColor = Color.white;

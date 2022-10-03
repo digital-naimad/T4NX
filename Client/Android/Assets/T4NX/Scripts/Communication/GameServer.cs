@@ -46,8 +46,8 @@ namespace T4NX
 
             switch (message.Type)
             {
-                case nameof(MessageType.T):
-                    LoadTerrain(message);
+                case nameof(MessageType.S):
+                    LoadStageData(message);
                     break;
                 case nameof(MessageType.SPT):
                     SpawnPlayerTank(message);
@@ -78,7 +78,7 @@ namespace T4NX
         {
             //Debug.Log("GameServer >> Upload Terrain");
 
-            Message message = Message.Create(nameof(MessageType.T)); // Message type
+            Message message = Message.Create(nameof(MessageType.S)); // Message type
 
             message.Add(StageController.Instance.GetTerrainDataGridSizeX()); // 0
             message.Add(StageController.Instance.GetTerrainDataGridSizeY()); // 1
@@ -144,9 +144,9 @@ namespace T4NX
             }
         }
 
-        private void LoadTerrain(Message message)
+        private void LoadStageData(Message message)
         {
-            // Debug.Log("GameServer >> LoadTerrain");
+            // Debug.Log(name + " >> LoadStageData");
 
             // gridSizeX, gridSizeY, terrainData
             StageController.Instance.LoadTerrainData(message.GetInt(0), message.GetInt(1), message.GetByteArray(2)); // 0, 1, 2
