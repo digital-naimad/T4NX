@@ -12,6 +12,8 @@ T4NX - Unity client for Android - 0.0.3
 CHANGELOG
 
 03.10.2022
++ Amounts of enemy tanks of given types added to Stage data, also providing editor and Construction support for that
++ Enemy Tanks & Pick Ups types definitions
 
 IN PROGRESS
 
@@ -28,8 +30,6 @@ T4NX - Unity client for Android - 0.0.2
 CHANGELOG
 
 03.10.2022
-+ Amounts of enemy tanks of given types added to Stage data, also providing editor and Construction support for that
-+ Enemy Tanks & Pick Ups types definitions
 + Stage Selector
 + Title Screen and game modes menu
 
