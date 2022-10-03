@@ -17,8 +17,8 @@ namespace T4NX
         [SerializeField] private int CurrentStageLimit
         {
             get 
-            { 
-                return 35; 
+            {
+                return stagesList.Count; // 35; 
             }
         } 
 
@@ -114,11 +114,10 @@ namespace T4NX
                 }
                 else
                 {
-                    //StageController.Instance.SetCurrentStage();
+                    StageController.Instance.SetCurrentStage(stagesList[_currentStageIndex]);
+                    StageController.Instance.FullfillStage();
+                    ScreenFader.Instance.Open(() => GameAppController.Instance.LaunchSelectedGameplayMode());
                 }
-               
-
-                
             }
         }
 
