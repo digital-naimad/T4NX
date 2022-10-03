@@ -8,7 +8,6 @@ namespace T4NX
     public class ConstructionController : GameplayModeController, IGamepadEventsListener
     {
         [SerializeField] private StageScriptableObject _constructionStage;
-        [SerializeField] private StageController _stageController;
 
         [SerializeField] private TankCursor _cursor;
         [SerializeField] private Vector2Int _cursorPosition = Vector2Int.one * 16;
@@ -99,8 +98,8 @@ namespace T4NX
 
         private void LoadTerrain()
         {
-            _stageController.SetCurrentStage(_constructionStage);
-            _stageController.FullfillStage();
+            StageController.Instance.SetCurrentStage(_constructionStage);
+            StageController.Instance.FullfillStage();
         }
 
         /// <summary>
@@ -184,7 +183,7 @@ namespace T4NX
             _constructionStage.ApplyToAsset();
 
             // Updates visuals
-            _stageController.UpdateTerrainType(fixedBlockIndex.x, fixedBlockIndex.y, terrainType);
+            StageController.Instance.UpdateTerrainType(fixedBlockIndex.x, fixedBlockIndex.y, terrainType);
         }
 
         private void GetTerrainDataForUpload()

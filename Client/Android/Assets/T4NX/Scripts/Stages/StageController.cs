@@ -18,6 +18,16 @@ namespace T4NX
         [SerializeField] private StageScriptableObject _defaultStage;
         [SerializeField] private StageScriptableObject _currentStage;
 
+        private bool _wasStageModified = false;
+
+        /// <summary>
+        /// Identifies if currently loaded stage was yet modified by CONSTRUCTION
+        /// </summary>
+        public bool WasStageModifiedByConstruction
+        {
+            get { return _wasStageModified; }
+        }
+
         private void Awake()
         {
             BlockPattern.FillPatternsDictionary();    
@@ -84,7 +94,9 @@ namespace T4NX
 
                 TerrainBlock blockAtPlayerBase = GetTerrainBlockAtPosition(baseObject.transform.position);
                 blockAtPlayerBase.TerrainBlockType = TerrainType.Empty;
-            } 
+            }
+
+            _wasStageModified = false;
         }
 
         /// <summary>
@@ -99,6 +111,8 @@ namespace T4NX
             blockAtPosition.TerrainBlockType = terrainType;
             //blockAtPosition.ApplyType();
             //blockAtPosition.gameObject.SetActive(false);
+
+            _wasStageModified = true;
         }
 
         #region Getting data from Default Stage
