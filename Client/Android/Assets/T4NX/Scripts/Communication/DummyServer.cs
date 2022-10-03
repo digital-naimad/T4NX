@@ -36,7 +36,7 @@ namespace T4NX
 
         private List<Vector2Int> playerBasePoints = new List<Vector2Int>();
 
-        private List<int> enemyTypesAmount = new List<int>();
+        private Dictionary<EnemyType, int> enemyTypesAmount = new Dictionary<EnemyType, int>();
 
         void Start()
         {
@@ -94,15 +94,15 @@ namespace T4NX
                         playerBasePoints.Add(new Vector2Int(message.GetInt(index + iPoint), message.GetInt(index + iPoint + 1)));
                     }
 
-                    /*
-                    int numberOfPlayerSpawnPoints = message.GetInt(3);
+                    // Number of Player Base Points
+                    int numberOfEnemyTypes = message.GetInt(index);
+                    index++;
 
-                    playerSpawnPoints.Clear();
-                    for (uint i = 4; i <= 4 + numberOfPlayerSpawnPoints; i+=2)
+                    enemyTypesAmount.Clear();
+                    for (uint iType = 0; iType < numberOfEnemyTypes; iType++)
                     {
-                        playerSpawnPoints.Add(new Vector2Int(message.GetInt(i), message.GetInt(i + 1)));
+                        enemyTypesAmount[(EnemyType)iType] = message.GetInt(index + iType);
                     }
-                    */
 
                     SendStageMessage();
                     break;
@@ -150,8 +150,8 @@ namespace T4NX
             }
 
             // Enemy type amounts
-            messageToSend.Add(enemyTypesAmount.Count);
-            for (int i = 0; i < enemyTypesAmount.Count; i++)
+            messageToSend.Add((int)EnemyType.TypeCount);
+            for (EnemyType i = 0; i < EnemyType.TypeCount; i++)
             {
                 messageToSend.Add(enemyTypesAmount[i]);
             }

@@ -175,6 +175,25 @@ namespace T4NX
         {
             return _defaultStage.GetPlayerBasePoint(index);
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>_defaultStage.GetEnemyTypeAmountsCount()</returns>
+        public int GetEnemyTypesCount()
+        {
+            return _defaultStage.GetEnemyTypeAmountsCount();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="enemyType"></param>
+        /// <returns>_defaultStage.GetEnemyTypeAmount(enemyType)</returns>
+        public int GetEnemyTypeAmount(EnemyType enemyType)
+        {
+            return _defaultStage.GetEnemyTypeAmount(enemyType);
+        }
         #endregion
 
         #region Setting up Current Stage
@@ -251,6 +270,19 @@ namespace T4NX
                 _currentStage.AddPlayerBasePoint(basePoints[i]);
             }
 
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="enemyTypeAmounts">table with amounts values</param>
+        public void SetupEnemyTypeAmounts(int[] enemyTypeAmounts)
+        {
+            //for (EnemyType enemyType = 0; enemyType < enemyType.cou)
+            for (int enemyType = 0; enemyType < enemyTypeAmounts.Length; enemyType++)
+            {
+                 _currentStage.SetEnemyTypeAmount((EnemyType)enemyType, enemyTypeAmounts[enemyType]);
+            }
         }
         #endregion
 

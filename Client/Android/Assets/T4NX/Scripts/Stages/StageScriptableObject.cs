@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using UnityEngine.Rendering.Universal;
 
 namespace T4NX
 {
@@ -17,7 +16,7 @@ namespace T4NX
         [SerializeField] private List<Vector2Int> _enemySpawnPoints = new List<Vector2Int>();
         [SerializeField] private List<Vector2Int> _playerBasePoints = new List<Vector2Int>();
 
-        [SerializeField] private List<byte> _enemyTypeAmounts = new List<byte>();
+        [SerializeField] private Dictionary<EnemyType, int> _enemyTypeAmounts = new Dictionary<EnemyType, int>();
         public int GridSizeX
         {
             get 
@@ -300,16 +299,6 @@ namespace T4NX
         }
 
         /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="enemyType"></param>
-        /// <returns></returns>
-        public int GetEnemyTypeAmount(EnemyType enemyType)
-        {
-            return _enemyTypeAmounts[(int)enemyType];
-        }
-
-        /// <summary>
         /// Player Base position
         /// </summary>
         /// <param name="spawnPoint"></param>
@@ -325,6 +314,35 @@ namespace T4NX
         public Vector2Int GetPlayerBasePoint(int index)
         {
             return _playerBasePoints[index % _playerBasePoints.Count];
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="enemyType"></param>
+        /// <returns></returns>
+        public int GetEnemyTypeAmount(EnemyType enemyType)
+        {
+            return _enemyTypeAmounts[enemyType];
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns>_enemyTypeAmounts.Count; - Number of actual enemy type amounts</returns>
+        public int GetEnemyTypeAmountsCount()
+        {
+            return _enemyTypeAmounts.Count;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="enemyType"></param>
+        /// <param name="amount"></param>
+        public void SetEnemyTypeAmount(EnemyType enemyType, int amount)
+        {
+            _enemyTypeAmounts[enemyType] = amount;
         }
 
         public void ApplyToAsset()

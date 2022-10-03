@@ -130,6 +130,21 @@ namespace T4NX
                 //Debug.Log("GameServer >> StageController.Instance.GetPlayerBasePoint(i)" + StageController.Instance.GetPlayerBasePoint(i));
             }
 
+
+            // Enemy Types amounts
+            int numberOfEnemyTypes = StageController.Instance.GetEnemyTypesCount();
+            message.Add(numberOfEnemyTypes); //3
+
+            //Debug.Log(name + " >> numberOfEnemyTypes " + numberOfEnemyTypes);
+
+            for (int iType = 0; iType < numberOfEnemyTypes; iType++)
+            {
+                message.Add(StageController.Instance.GetEnemyTypeAmount((EnemyType)iType));
+
+
+                //Debug.Log(name + " >> StageController.Instance.GetEnemyTypeAmount((EnemyType)iType)" + StageController.Instance.GetEnemyTypeAmount((EnemyType)iType));
+            }
+
             //Debug.Log("GameServer >> message.count " + (message.Count));
 
             SendGameMessage(message);
@@ -190,6 +205,18 @@ namespace T4NX
                 playerBasePoints[iPoint] = new Vector2Int(message.GetInt(index + iPoint), message.GetInt(index + iPoint + 1));
             }
             StageController.Instance.SetupPlayerBasePositions(playerBasePoints);
+
+            // Number of Enemy Types
+            uint numberOfEnemyTypes = (uint)message.GetInt(index);
+            index++;
+
+            //  Enemy Type amounts
+            int[] enemyTypesAmounts = new int[numberOfEnemyTypes];
+            for (uint iType = 0; iType < numberOfEnemyTypes; iType++)
+            {
+                enemyTypesAmounts[iType] = message.GetInt(index + iType);
+            }
+            StageController.Instance.SetupEnemyTypeAmounts(enemyTypesAmounts);
 
             StageController.Instance.FullfillStage();
         }
