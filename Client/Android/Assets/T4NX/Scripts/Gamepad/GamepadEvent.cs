@@ -59,4 +59,34 @@ namespace T4NX
         Count //Mic_Detect
 
     }
+    /*
+   public struct GamepadEvent
+   {
+       public const int UpPressed = 0;
+       public const int UpReleased = 1;
+
+       public const int DownPressed = 2;
+       public static int DownReleased = 3;
+
+       public const int LeftPressed = 4;
+       public const int LeftReleased = 5;
+
+       public const int RightPressed = 6;
+       public const int RightReleased = 7;
+
+       public const int SelectPressed = 8;
+       public const int SelectReleased = 9;
+
+       public const int StartPressed = 10;
+       public const int StartReleased = 11;
+
+       public const int BPressed = 12;
+       public const int BReleased = 13;
+
+       public const int APressed = 14;
+       public const int AReleased = 15;
+
+
+   }
+   */
 }
