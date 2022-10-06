@@ -6,11 +6,11 @@ namespace T4NX
     /// </summary>
     public class GameplayEventsManager : EventsManager<GameplayEvent, IGameplayEventsListener>
     {
-        public void SetupListeners(IGameplayEventsListener listeners)
+        public static void SetupListeners(IGameplayEventsListener listeners)
         {
             RemoveListeners();
 
-            currentListeners = listeners;
+            CurrentListeners = listeners;
 
             // PLAYER TANK SPAWN
             RegisterListener(GameplayEvent.PlayerTankSpawn, listeners.OnPlayerTankSpawn);
@@ -19,18 +19,19 @@ namespace T4NX
             RegisterListener(GameplayEvent.PlayerTankMove, listeners.OnPlayerTankMove);
         }
 
-        private void RemoveListeners()
+        private static void RemoveListeners()
         {
-            if (currentListeners == null)
+            if (CurrentListeners == null)
             {
                 return;
             }
 
             // PLAYER TANK SPAWN
-            UnregisterListener(GameplayEvent.PlayerTankSpawn, currentListeners.OnPlayerTankSpawn);
+            UnregisterListener(GameplayEvent.PlayerTankSpawn, CurrentListeners.OnPlayerTankSpawn);
 
             // PLAYER TANK MOVE
-            UnregisterListener(GameplayEvent.PlayerTankMove, currentListeners.OnPlayerTankMove);
+            UnregisterListener(GameplayEvent.PlayerTankMove, CurrentListeners.OnPlayerTankMove);
         }
+
     }
 }

@@ -82,94 +82,94 @@ namespace T4NX
             if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
             {
                 _isUpPressed = true;
-                GamepadEventsManager.Instance.DispatchEvent(GamepadEvent.Up_Pressed);
+                GamepadEventsManager.DispatchEvent(GamepadEvent.Up_Pressed);
             }
             else if (Input.GetKeyUp(KeyCode.W) || Input.GetKeyUp(KeyCode.UpArrow))
             {
                 _isUpPressed = false;
-                GamepadEventsManager.Instance.DispatchEvent(GamepadEvent.Up_Released);
+                GamepadEventsManager.DispatchEvent(GamepadEvent.Up_Released);
             }
 
             // Down button
             if (Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.DownArrow))
             {
                 _isDownPressed = true;
-                GamepadEventsManager.Instance.DispatchEvent(GamepadEvent.Down_Pressed);
+                GamepadEventsManager.DispatchEvent(GamepadEvent.Down_Pressed);
             }
             else if (Input.GetKeyUp(KeyCode.S) || Input.GetKeyUp(KeyCode.DownArrow))
             {
                 _isDownPressed = false;
-                GamepadEventsManager.Instance.DispatchEvent(GamepadEvent.Down_Released);
+                GamepadEventsManager.DispatchEvent(GamepadEvent.Down_Released);
             }
 
             // Left button
             if (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 _isLeftPressed = true;
-                GamepadEventsManager.Instance.DispatchEvent(GamepadEvent.Left_Pressed);
+                GamepadEventsManager.DispatchEvent(GamepadEvent.Left_Pressed);
             }
             else if (Input.GetKeyUp(KeyCode.A) || Input.GetKeyUp(KeyCode.LeftArrow))
             {
                 _isLeftPressed = false;
-                GamepadEventsManager.Instance.DispatchEvent(GamepadEvent.Left_Released);
+                GamepadEventsManager.DispatchEvent(GamepadEvent.Left_Released);
             }
 
             // Right button
             if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
             {
                 _isRightPressed = true;
-                GamepadEventsManager.Instance.DispatchEvent(GamepadEvent.Right_Pressed);
+                GamepadEventsManager.DispatchEvent(GamepadEvent.Right_Pressed);
             }
             else if (Input.GetKeyUp(KeyCode.D) || Input.GetKeyUp(KeyCode.RightArrow))
             {
                 _isRightPressed = false;
-                GamepadEventsManager.Instance.DispatchEvent(GamepadEvent.Right_Released);
+                GamepadEventsManager.DispatchEvent(GamepadEvent.Right_Released);
             }
 
             // Select & Start
             if (Input.GetKeyDown(KeyCode.O))
             {
                 _isSelectPressed = true;
-                GamepadEventsManager.Instance.DispatchEvent(GamepadEvent.Select_Pressed);
+                GamepadEventsManager.DispatchEvent(GamepadEvent.Select_Pressed);
             }
             else if (Input.GetKeyUp(KeyCode.O))
             {
                 _isSelectPressed = false;
-                GamepadEventsManager.Instance.DispatchEvent(GamepadEvent.Select_Released);
+                GamepadEventsManager.DispatchEvent(GamepadEvent.Select_Released);
             }
             if (Input.GetKeyDown(KeyCode.P))
             {
                 _isStartPressed = true;
-                GamepadEventsManager.Instance.DispatchEvent(GamepadEvent.Start_Pressed);
+                GamepadEventsManager.DispatchEvent(GamepadEvent.Start_Pressed);
             }
             else if (Input.GetKeyUp(KeyCode.P))
             {
                 _isStartPressed = false;
-                GamepadEventsManager.Instance.DispatchEvent(GamepadEvent.Start_Released);
+                GamepadEventsManager.DispatchEvent(GamepadEvent.Start_Released);
             }
 
             // Action button B
             if (Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.LeftBracket))
             {
                 _isBPressed = true;
-                GamepadEventsManager.Instance.DispatchEvent(GamepadEvent.B_Pressed);
+                GamepadEventsManager.DispatchEvent(GamepadEvent.B_Pressed);
             }
             else if (Input.GetKeyUp(KeyCode.K) || Input.GetKeyUp(KeyCode.LeftBracket))
             {
                 _isBPressed = false;
-                GamepadEventsManager.Instance.DispatchEvent(GamepadEvent.B_Released);
+                GamepadEventsManager.DispatchEvent(GamepadEvent.B_Released);
             }
 
             // Action button A
             if (Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.RightBracket))
             {
                 _isAPressed = true;
-                GamepadEventsManager.Instance.DispatchEvent(GamepadEvent.A_Pressed);
+                GamepadEventsManager.DispatchEvent(GamepadEvent.A_Pressed);
             }
             else if (Input.GetKeyUp(KeyCode.L) || Input.GetKeyUp(KeyCode.RightBracket))
             {
                 _isAPressed = false;
-                GamepadEventsManager.Instance.DispatchEvent(GamepadEvent.A_Released);
+                GamepadEventsManager.DispatchEvent(GamepadEvent.A_Released);
             }
         }
     }

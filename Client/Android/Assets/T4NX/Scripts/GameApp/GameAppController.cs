@@ -44,7 +44,8 @@ namespace T4NX
         {
             Debug.Log(name + " >> LaunchGameplayMode() GameplayMode: " + GameplayMenu.Instance.CurrentlySelectedGameplayMode);
 
-            GamepadEventsManager.Instance.SetupListeners(GameplayMenu.Instance.CurrentGameplayController.GamepadEventsListener);
+            //((GamepadEventsManager)GamepadEventsManager.Instance).SetupListeners(GameplayMenu.Instance.CurrentGameplayController.GamepadEventsListener);
+            GamepadEventsManager.SetupListeners(GameplayMenu.Instance.CurrentGameplayController.GamepadEventsListener);
 
             GameplayMenu.Instance.CurrentGameplayController.Launch();
         }
@@ -199,7 +200,8 @@ namespace T4NX
 
         private void SetupGamepadListenersForTitleScreen()
         {
-            GamepadEventsManager.Instance.SetupListeners(this);
+            //((GamepadEventsManager)GamepadEventsManager.Instance).SetupListeners(this);
+            GamepadEventsManager.SetupListeners(this);
         }
         #endregion
     }

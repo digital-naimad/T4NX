@@ -200,7 +200,8 @@ namespace T4NX
 
         private void SetupGamepadListeners()
         {
-            GamepadEventsManager.Instance.SetupListeners(this);
+            //((GamepadEventsManager)GamepadEventsManager.Instance).SetupListeners(this);
+            GamepadEventsManager.SetupListeners(this);
         }
 
         private void IncrementStageIndex()

@@ -64,14 +64,14 @@ namespace T4NX
                 //Debug.Log(name + " >> Game Object pointer down");
             }
 
-            GamepadEventsManager.Instance.DispatchEvent(_eventPressed);
+            GamepadEventsManager.DispatchEvent(_eventPressed);
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
             {
                 _isPressed = false;
-                GamepadEventsManager.Instance.DispatchEvent(_eventReleased);
+                GamepadEventsManager.DispatchEvent(_eventReleased);
 
                 //Output to console the clicked GameObject's name and the following message. You can replace this with your own actions for when clicking the GameObject.
                 //Debug.Log(name + " >> Game Object pointer up!");

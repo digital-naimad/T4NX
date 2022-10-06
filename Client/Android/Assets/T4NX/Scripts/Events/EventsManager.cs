@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace T4NX
 {
@@ -8,17 +9,27 @@ namespace T4NX
     /// </summary>
     /// <typeparam name="CustomEvent">GamepadEvent or GameplayEvent enum</typeparam>
     /// <typeparam name="CustomListenerInterface">IGamepadEventsListener or IGameplayEventsListener interface</typeparam>
-    public class EventsManager<CustomEvent, CustomListenerInterface> : MonoSingleton<GamepadEventsManager>
+    public class EventsManager<CustomEvent, CustomListenerInterface> : MonoBehaviour
     {
-        protected Dictionary<CustomEvent, List<Action<int[]>>> listenersDictionary = new Dictionary<CustomEvent, List<Action<int[]>>>();
-        protected CustomListenerInterface currentListeners;
-
-        #region Life-cycle callback
-        private void Awake()
-        {
-
+        /// <summary>
+        /// 
+        /// </summary>
+        public static CustomListenerInterface CurrentListeners 
+        { 
+            get 
+            { 
+                return currentListeners; 
+            }  
+            set 
+            { 
+                currentListeners = value; 
+            }
         }
-        #endregion
+
+        private static Dictionary<CustomEvent, List<Action<int[]>>> listenersDictionary = new Dictionary<CustomEvent, List<Action<int[]>>>();
+        private static CustomListenerInterface currentListeners;
+
+
 
         #region Public methods
         /// <summary>
@@ -26,7 +37,7 @@ namespace T4NX
         /// </summary>
         /// <param name="eventType">One of GamepadEvent defined in GamepadEvent enum</param>
         /// <param name="callbackFunction"></param>
-        public void RegisterListener(CustomEvent eventType, Action<int[]> callbackFunction)
+        public static void RegisterListener(CustomEvent eventType, Action<int[]> callbackFunction)
         {
             if (!listenersDictionary.ContainsKey(eventType))
             {
@@ -41,7 +52,7 @@ namespace T4NX
         /// </summary>
         /// <param name="eventType">One of GamepadEvents defined in GamepadEvent enum</param>
         /// <param name="callbackFunction"></param>
-        public void UnregisterListener(CustomEvent eventType, Action<int[]> callbackFunction)
+        public static void UnregisterListener(CustomEvent eventType, Action<int[]> callbackFunction)
         {
             if (!listenersDictionary.ContainsKey(eventType))
             {
@@ -60,8 +71,8 @@ namespace T4NX
         /// Callbacks all of registered listeners about occurrence of an event given in the first parameter
         /// </summary>
         /// <param name="eventType">One of a GamepadEvents defined in GamepadEvent enum</param>
-        /// <param name="value">optional value of type short. Using by some eventTypes</param>
-        public void DispatchEvent(CustomEvent eventType, params int[] dataValues)//short value = 0)
+        /// <param name="dataValues"> dynamic values list of type int. Using by some of an eventTypes</param>
+        public static void DispatchEvent(CustomEvent eventType, params int[] dataValues)
         {
             //Debug.Log(this.name + " >> Call to dispatch event: " + eventType);
 

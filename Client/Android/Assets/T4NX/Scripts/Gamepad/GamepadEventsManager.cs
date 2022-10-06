@@ -10,11 +10,11 @@ namespace T4NX
         //private IGamepadEventsListener currentListeners = null;
 
 
-        public void SetupListeners(IGamepadEventsListener listeners)
+        public static void SetupListeners(IGamepadEventsListener listeners)
         {
             RemoveListeners();
 
-            currentListeners = listeners;
+            CurrentListeners = listeners;
 
             // UP & DOWN
             RegisterListener(GamepadEvent.Up_Pressed, listeners.OnUpPressed);
@@ -82,9 +82,9 @@ namespace T4NX
         }
 
         
-        private void RemoveListeners()
+        private static void RemoveListeners()
         {
-            if (currentListeners == null)
+            if (CurrentListeners == null)
             { 
                 return;
             }
@@ -119,32 +119,32 @@ namespace T4NX
             */
 
             // UP & DOWN
-            UnregisterListener(GamepadEvent.Up_Pressed, currentListeners.OnUpPressed);
-            UnregisterListener(GamepadEvent.Up_Released, currentListeners.OnUpReleased);
+            UnregisterListener(GamepadEvent.Up_Pressed, CurrentListeners.OnUpPressed);
+            UnregisterListener(GamepadEvent.Up_Released, CurrentListeners.OnUpReleased);
 
-            UnregisterListener(GamepadEvent.Down_Pressed, currentListeners.OnDownPressed);
-            UnregisterListener(GamepadEvent.Down_Released, currentListeners.OnDownReleased);
+            UnregisterListener(GamepadEvent.Down_Pressed, CurrentListeners.OnDownPressed);
+            UnregisterListener(GamepadEvent.Down_Released, CurrentListeners.OnDownReleased);
 
             // LEFT & RIGHT
-            UnregisterListener(GamepadEvent.Left_Pressed, currentListeners.OnLeftPressed);
-            UnregisterListener(GamepadEvent.Left_Released, currentListeners.OnLeftReleased);
+            UnregisterListener(GamepadEvent.Left_Pressed, CurrentListeners.OnLeftPressed);
+            UnregisterListener(GamepadEvent.Left_Released, CurrentListeners.OnLeftReleased);
 
-            UnregisterListener(GamepadEvent.Right_Pressed, currentListeners.OnRightPressed);
-            UnregisterListener(GamepadEvent.Right_Released, currentListeners.OnRightReleased);
+            UnregisterListener(GamepadEvent.Right_Pressed, CurrentListeners.OnRightPressed);
+            UnregisterListener(GamepadEvent.Right_Released, CurrentListeners.OnRightReleased);
 
             // SELECT & START
-            UnregisterListener(GamepadEvent.Select_Pressed, currentListeners.OnSelectPressed);
-            UnregisterListener(GamepadEvent.Select_Released, currentListeners.OnSelectReleased);
+            UnregisterListener(GamepadEvent.Select_Pressed, CurrentListeners.OnSelectPressed);
+            UnregisterListener(GamepadEvent.Select_Released, CurrentListeners.OnSelectReleased);
 
-            UnregisterListener(GamepadEvent.Start_Pressed, currentListeners.OnStartPressed);
-            UnregisterListener(GamepadEvent.Start_Released, currentListeners.OnStartReleased);
+            UnregisterListener(GamepadEvent.Start_Pressed, CurrentListeners.OnStartPressed);
+            UnregisterListener(GamepadEvent.Start_Released, CurrentListeners.OnStartReleased);
 
             // B & A
-            UnregisterListener(GamepadEvent.B_Pressed, currentListeners.OnBPressed);
-            UnregisterListener(GamepadEvent.B_Released, currentListeners.OnBReleased);
+            UnregisterListener(GamepadEvent.B_Pressed, CurrentListeners.OnBPressed);
+            UnregisterListener(GamepadEvent.B_Released, CurrentListeners.OnBReleased);
 
-            UnregisterListener(GamepadEvent.A_Pressed, currentListeners.OnAPressed);
-            UnregisterListener(GamepadEvent.A_Released, currentListeners.OnAReleased);
+            UnregisterListener(GamepadEvent.A_Pressed, CurrentListeners.OnAPressed);
+            UnregisterListener(GamepadEvent.A_Released, CurrentListeners.OnAReleased);
         }
         
     }
