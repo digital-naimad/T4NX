@@ -206,75 +206,75 @@ namespace T4NX
         }
 
         #region Gamepad Events listeners - SELECT & START
-        public void OnSelectPressed(short data)
+        public void OnSelectPressed(params int[] data)
         {
 
         }
 
-        public void OnSelectReleased(short data)
+        public void OnSelectReleased(params int[] data)
         {
 
         }
 
-        public void OnStartPressed(short data)
+        public void OnStartPressed(params int[] data)
         {
             _cursor.ChangeVisibility(false);
 
             GameAppController.Instance.ReturnToTitleScreen(GameplayMode.StageEditor);
         }
 
-        public void OnStartReleased(short data)
+        public void OnStartReleased(params int[] data)
         {
 
         }
         #endregion
 
         #region Gamepad Events listeners - UP & DOWN
-        public void OnUpPressed(short data)
+        public void OnUpPressed(params int[] data)
         {
             isUpPressed = true;
         }
 
-        public void OnUpReleased(short data)
+        public void OnUpReleased(params int[] data)
         {
             isUpPressed = false;
         }
 
-        public void OnDownPressed(short data)
+        public void OnDownPressed(params int[] data)
         {
             isDownPressed = true;
         }
 
-        public void OnDownReleased(short data)
+        public void OnDownReleased(params int[] data)
         {
             isDownPressed = false;
         }
         #endregion
 
         #region Gamepad Events listeners - LEFT & RIGHT
-        public void OnLeftPressed(short data)
+        public void OnLeftPressed(params int[] data)
         {
             isLeftPressed = true;
         }
 
-        public void OnLeftReleased(short data)
+        public void OnLeftReleased(params int[] data)
         {
             isLeftPressed = false;
         }
 
-        public void OnRightPressed(short data)
+        public void OnRightPressed(params int[] data)
         {
             isRightPressed = true;
         }
 
-        public void OnRightReleased(short data)
+        public void OnRightReleased(params int[] data)
         {
             isRightPressed = false;
         }
         #endregion
 
         #region Gamepad Events listeners - B & A
-        public void OnBPressed(short data)
+        public void OnBPressed(params int[] data)
         {
             //Debug.Log(this.name + " >> On B pressed");
             if (!wasCursorMoved)
@@ -288,13 +288,13 @@ namespace T4NX
             isBPressed = true;
         }
 
-        public void OnBReleased(short data)
+        public void OnBReleased(params int[] data)
         {
             isBPressed = false;
             //Debug.Log(this.name + " >> On B released");
         }
 
-        public void OnAPressed(short data)
+        public void OnAPressed(params int[] data)
         {
             if (!wasCursorMoved)
             {
@@ -308,7 +308,7 @@ namespace T4NX
             isAPressed = true;
         }
 
-        public void OnAReleased(short data)
+        public void OnAReleased(params int[] data)
         {
             isAPressed = false;
             //Debug.Log(this.name + " >> On A released");

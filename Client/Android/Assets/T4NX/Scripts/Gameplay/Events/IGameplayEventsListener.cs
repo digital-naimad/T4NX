@@ -7,12 +7,12 @@ namespace T4NX
         /// 
         /// </summary>
         /// <param name="data"></param>
-        public void OnPlayerTankSpawn(short data);
+        public void OnPlayerTankSpawn(params int[] list);
         
         /// <summary>
         /// 
         /// </summary>
         /// <param name="data"></param>
-        public void OnPlayerTankMove(short data);
+        public void OnPlayerTankMove(params int[] list);
     }
 }

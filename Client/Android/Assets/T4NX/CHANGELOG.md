@@ -11,6 +11,9 @@ T4NX - Unity client for Android - 0.0.3
 
 CHANGELOG
 
+06.10.2022
+* Improvements of ingame events system: implemented generic Events Manager and GameplayEvents with support of PlayerTankSpawn and Move Events based on it. Also events callbacks data propagation have been improved with param list.
+
 03.10.2022
 + Amounts of enemy tanks of given types added to Stage data, also providing editor and Construction support for that
 + Enemy Tanks & Pick Ups types definitions

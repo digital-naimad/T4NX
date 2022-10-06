@@ -10,15 +10,14 @@ namespace T4NX
     /// <typeparam name="CustomListenerInterface">IGamepadEventsListener or IGameplayEventsListener interface</typeparam>
     public class EventsManager<CustomEvent, CustomListenerInterface> : MonoSingleton<GamepadEventsManager>
     {
-        protected Dictionary<CustomEvent, List<Action<short>>> listenersDictionary = new Dictionary<CustomEvent, List<Action<short>>>();
-        protected CustomListenerInterface currentListeners; // = null;
+        protected Dictionary<CustomEvent, List<Action<int[]>>> listenersDictionary = new Dictionary<CustomEvent, List<Action<int[]>>>();
+        protected CustomListenerInterface currentListeners;
 
         #region Life-cycle callback
         private void Awake()
         {
 
         }
-
         #endregion
 
         #region Public methods
@@ -27,11 +26,11 @@ namespace T4NX
         /// </summary>
         /// <param name="eventType">One of GamepadEvent defined in GamepadEvent enum</param>
         /// <param name="callbackFunction"></param>
-        public void RegisterListener(CustomEvent eventType, Action<short> callbackFunction)
+        public void RegisterListener(CustomEvent eventType, Action<int[]> callbackFunction)
         {
             if (!listenersDictionary.ContainsKey(eventType))
             {
-                listenersDictionary.Add(eventType, new List<Action<short>>());
+                listenersDictionary.Add(eventType, new List<Action<int[]>>());
             }
 
             listenersDictionary[eventType].Add(callbackFunction);
@@ -42,7 +41,7 @@ namespace T4NX
         /// </summary>
         /// <param name="eventType">One of GamepadEvents defined in GamepadEvent enum</param>
         /// <param name="callbackFunction"></param>
-        public void UnregisterListener(CustomEvent eventType, Action<short> callbackFunction)
+        public void UnregisterListener(CustomEvent eventType, Action<int[]> callbackFunction)
         {
             if (!listenersDictionary.ContainsKey(eventType))
             {
@@ -62,7 +61,7 @@ namespace T4NX
         /// </summary>
         /// <param name="eventType">One of a GamepadEvents defined in GamepadEvent enum</param>
         /// <param name="value">optional value of type short. Using by some eventTypes</param>
-        public void DispatchEvent(CustomEvent eventType, short value = 0)
+        public void DispatchEvent(CustomEvent eventType, params int[] dataValues)//short value = 0)
         {
             //Debug.Log(this.name + " >> Call to dispatch event: " + eventType);
 
@@ -78,12 +77,12 @@ namespace T4NX
             }
             */
 
-            List<Action<short>> actionsList = listenersDictionary[eventType];//.ForEach(e => e(value));
+            List<Action<int[]>> actionsList = listenersDictionary[eventType];//.ForEach(e => e(value));
             //actionsList.ForEach(e => e(value));
 
             for (int i = 0; i < actionsList.Count; i++)
             {
-                actionsList[i].Invoke(value);
+                actionsList[i].Invoke(dataValues);
             }
 
         }
