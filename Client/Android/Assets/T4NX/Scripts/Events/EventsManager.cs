@@ -5,7 +5,7 @@ using UnityEngine;
 namespace T4NX
 {
     /// <summary>
-    /// Implementation of Observer Pattern also using implementation of Singleton Pattern
+    /// Implementation of Observer Pattern
     /// </summary>
     /// <typeparam name="CustomEvent">GamepadEvent or GameplayEvent enum</typeparam>
     /// <typeparam name="CustomListenerInterface">IGamepadEventsListener or IGameplayEventsListener interface</typeparam>
@@ -28,8 +28,6 @@ namespace T4NX
 
         private static Dictionary<CustomEvent, List<Action<int[]>>> listenersDictionary = new Dictionary<CustomEvent, List<Action<int[]>>>();
         private static CustomListenerInterface currentListeners;
-
-
 
         #region Public methods
         /// <summary>

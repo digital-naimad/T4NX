@@ -9,14 +9,14 @@ namespace T4NX
     {
         private class DummyPlayer
         {
-            public string name;
-            public int no = 0; // number
+            public int playerID; 
+
             public int positionX;
             public int positionY;
 
             public int colorA = (int)ColorName.blue0;
-            public int colorB = (int)ColorName.yellow0;
-            public int colorC = (int)ColorName.purple0;
+            public int colorB = (int)ColorName.lightBlue0;
+            public int colorC = (int)ColorName.blue2;
         }
 
         private List<DummyPlayer> players = new List<DummyPlayer>();
@@ -38,9 +38,12 @@ namespace T4NX
 
         private Dictionary<EnemyType, int> enemyTypesAmount = new Dictionary<EnemyType, int>();
 
+
+        private int tanksCount = 0;
+
         void Start()
         {
-            SendMessagesSequence();
+            //SendMessagesSequence();
         }
 
         // Update is called once per frame
@@ -111,7 +114,7 @@ namespace T4NX
 
         private void SendMessagesSequence()
         {
-            //Invoke(nameof(SendSpawnPlayerTankMessage), 1.0f);
+            Invoke(nameof(SendSpawnPlayerTankMessage), 5.0f);
         }
 
         /// <summary>
@@ -153,7 +156,14 @@ namespace T4NX
             messageToSend.Add((int)EnemyType.TypeCount);
             for (EnemyType i = 0; i < EnemyType.TypeCount; i++)
             {
-                messageToSend.Add(enemyTypesAmount[i]);
+                if (enemyTypesAmount.ContainsKey(i))
+                {
+                    messageToSend.Add(enemyTypesAmount[i]);
+                }
+                else
+                {
+                    messageToSend.Add(0);
+                }
             }
 
             // Debug.Log(">> DummyServer >> spawnPointsX[i] " + spawnPointsX[i]);
@@ -171,8 +181,6 @@ namespace T4NX
             //Debug.Log("DummyServer >> SendSpawnTankMessage count: " + spawnPointsX.Count);
 
             Vector2Int randomSpawnPosition = enemySpawnPoints[Random.Range(0, enemySpawnPoints.Count)];
-            //int randomPositionX = playerSpawnPointsX[Random.Range(0, playerSpawnPointsX.Count)];
-            //int randomPositionY = playerSpawnPointsY[Random.Range(0, playerSpawnPointsY.Count)];
 
             Message messageToSend = Message.Create(nameof(MessageType.SET));
             messageToSend.Add(randomSpawnPosition.x);
@@ -186,16 +194,15 @@ namespace T4NX
         /// </summary>
         private void SendSpawnPlayerTankMessage()
         {
-            Vector2Int randomSpawnPosition = playerSpawnPoints[Random.Range(0, playerSpawnPoints.Count)];
+            Debug.Log(name + " >> SendSpawnPlayerTankMessage()");
 
-            // int randomPositionX = playerSpawnPointsX[Random.Range(0, playerSpawnPointsX.Count)];
-            // int randomPositionY = playerSpawnPointsY[Random.Range(0, playerSpawnPointsY.Count)];
+            Vector2Int randomSpawnPosition = playerSpawnPoints[Random.Range(0, playerSpawnPoints.Count)];
 
             DummyPlayer tank = CreateTank(randomSpawnPosition);//, randomPositionY);
 
             Message messageToSend = Message.Create(nameof(MessageType.SPT));
 
-            messageToSend.Add(tank.name); // 0 string
+            messageToSend.Add(tank.playerID); // 0 int
 
             messageToSend.Add(tank.positionX); // 1 int
             messageToSend.Add(tank.positionY); // 2 int
@@ -209,11 +216,17 @@ namespace T4NX
 
         private DummyPlayer CreateTank(Vector2Int spawnPosition) //int positionX, int positionY)
         {
+            Debug.Log(name + " >> CreateTank | spawnPosition = " + spawnPosition);
+
             DummyPlayer dummyPlayer = new DummyPlayer();
-            dummyPlayer.name = "Player 1";
+            //dummyPlayer.name = "Player 1";
+            dummyPlayer.playerID = tanksCount;
             dummyPlayer.positionX = spawnPosition.x;
             dummyPlayer.positionY = spawnPosition.y;
             players.Add(dummyPlayer);
+
+            tanksCount++;
+
             return dummyPlayer;
         }
 

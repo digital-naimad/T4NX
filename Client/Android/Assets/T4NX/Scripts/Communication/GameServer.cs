@@ -33,9 +33,6 @@ namespace T4NX
             HandleMessages();
         }
 
-        
-        
-
         /// <summary>
         /// 
         /// </summary>
@@ -236,7 +233,8 @@ namespace T4NX
 
         private void SpawnPlayerTank(Message message)
         {
-            string tankerName = message.GetString(0);
+            //string tankerName = message.GetString(0);
+            int playerID = message.GetInt(0);
 
             Vector2Int positionToSpawn = new Vector2Int(message.GetInt(1), message.GetInt(2));
 
@@ -244,7 +242,7 @@ namespace T4NX
             ColorName colorB = (ColorName)message.GetInt(4);
             ColorName colorC = (ColorName)message.GetInt(5);
 
-            TanksManager.Instance.SpawnPlayerTank(tankerName, positionToSpawn.x, positionToSpawn.y, colorA, colorB, colorC);
+            GameplayEventsManager.DispatchEvent(GameplayEvent.PlayerTankSpawn, playerID, positionToSpawn.x, positionToSpawn.y, (int)colorA, (int)colorB, (int)colorC);
         }
     }
 }

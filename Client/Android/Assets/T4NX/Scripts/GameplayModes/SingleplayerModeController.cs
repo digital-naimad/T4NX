@@ -25,23 +25,37 @@ namespace T4NX
 
         }
 
+        //
+        // Implementation of an abstract method
+        //
         public override void Launch()
         {
-            
             Debug.Log(name + " Launch()");
 
-
+            GameplayEventsManager.SetupListeners(this);
         }
 
         #region Gameplay Events Listeners - PLAYER TANK SPAWN & MOVE
         public void OnPlayerTankSpawn(params int[] data)
         {
-            Debug.Log(this.name + " >> OnPlayerTankSpawn");
+            Debug.Log(this.name + " >> OnPlayerTankSpawn | params " + data);
+
+            int playerID = data[0];
+
+            Vector2Int positionToSpawn = new Vector2Int(data[1], data[2]);
+
+            ColorName colorA = (ColorName)data[3];
+            ColorName colorB = (ColorName)data[4];
+            ColorName colorC = (ColorName)data[5];
+
+            TanksManager.Instance.SpawnPlayerTank(playerID, positionToSpawn.x, positionToSpawn.y, colorA, colorB, colorC);
         }
 
         public void OnPlayerTankMove(params int[] data)
         {
             Debug.Log(this.name + " >> OnPlayerTankMove");
+
+
         }
         #endregion
 

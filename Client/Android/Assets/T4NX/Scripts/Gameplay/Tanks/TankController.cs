@@ -3,14 +3,16 @@ namespace T4NX
     public class TankController : CustomSprite
     {
         //ScreenPalette.SpriteSubpalette spriteSubpalette;
-        private string _tankistName;
+        //private string _tankistName;
+        private int _playerID = -1;
+        public int PlayerID { get { return _playerID; } }
 
         
        
         /// <summary>
         /// 
         /// </summary>
-        public string TankistName { get { return _tankistName; } }
+        //public string TankistName { get { return _tankistName; } }
         
 
         // Start is called before the first frame update
@@ -25,9 +27,11 @@ namespace T4NX
 
         }
 
-        public void InitWithData(string tankistName, ColorName colorA, ColorName colorB, ColorName colorC)
+        //public void InitWithData(string tankistName, ColorName colorA, ColorName colorB, ColorName colorC)
+        public void InitWithData(int playerID, ColorName colorA, ColorName colorB, ColorName colorC)
         {
-            _tankistName = tankistName;
+            //_tankistName = tankistName;
+            _playerID = playerID;
 
             ApplyColors(colorA, colorB, colorC);
         }

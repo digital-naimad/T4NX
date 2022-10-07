@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using static T4NX.ScreenFader;
 
 namespace T4NX
 {

@@ -26,10 +26,20 @@ namespace T4NX
 
         }
 
-        public void SpawnPlayerTank(string tankerName, int positionX, int positionY, ColorName colorA, ColorName colorB, ColorName colorC)
+        //public void SpawnPlayerTank(string tankerName, int positionX, int positionY, ColorName colorA, ColorName colorB, ColorName colorC)
+        /// <summary>
+        /// Spawns player's tank on the stage
+        /// </summary>
+        /// <param name="playerID"></param>
+        /// <param name="positionX"></param>
+        /// <param name="positionY"></param>
+        /// <param name="colorA"></param>
+        /// <param name="colorB"></param>
+        /// <param name="colorC"></param>
+        public void SpawnPlayerTank(int playerID, int positionX, int positionY, ColorName colorA, ColorName colorB, ColorName colorC)
         {
             TankController newTank = ObjectPooler.Instance.SpawnFromPool(TankPrefabTag).GetComponent<TankController>();
-            newTank.InitWithData(tankerName, colorA, colorB, colorC);
+            newTank.InitWithData(playerID, colorA, colorB, colorC);
 
             tanks.Add(newTank);
 
