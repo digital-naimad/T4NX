@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-using static T4NX.ScreenShifter;
 
 namespace T4NX
 {
@@ -20,6 +17,8 @@ namespace T4NX
         [SerializeField] private int southFrameShiftClose = 0;
 
         [SerializeField] private float animationDuration = 1.0f;
+
+        [SerializeField] private Transform coverFrameRoot;
 
         public delegate void OnClosingCompletedCallback();
         public delegate void OnOpeningCompletedCallback();
@@ -60,8 +59,9 @@ namespace T4NX
         /// </summary>
         public void Open(OnOpeningCompletedCallback onCompleteCallback)
         {
-            ApplyFramesPositions();
-            ShowFrames();
+            ApplyBlindsPositions();
+            ShowBlinds();
+            ShowCoverFrame();
 
             northOpenTween = northFrame.DOMoveY(northFrameShiftOpen, animationDuration, true);
             northOpenTween.SetEase(Ease.Linear);
@@ -82,8 +82,9 @@ namespace T4NX
         /// </summary>
         public void Close(OnClosingCompletedCallback onCompleteCallback)
         {
-            ApplyFramesPositions();
-            ShowFrames();
+            ApplyBlindsPositions();
+            ShowBlinds();
+            HideCoverFrame();
 
             northOpenTween = northFrame.DOMoveY(northFrameShiftClose, animationDuration, true);
             northOpenTween.SetEase(Ease.Linear);
@@ -98,7 +99,7 @@ namespace T4NX
             _isOpen = false;
         }
 
-        private void ShowFrames()
+        private void ShowBlinds()
         {
             // NORTH FRAME
             northFrame.gameObject.SetActive(true);
@@ -107,10 +108,20 @@ namespace T4NX
             southFrame.gameObject.SetActive(true);
         }
 
-        private void ApplyFramesPositions()
+        private void ApplyBlindsPositions()
         {
             northFrame.position = new Vector3(0, _isOpen ? northFrameShiftOpen : northFrameShiftClose);
             southFrame.position = new Vector3(0, _isOpen ? southFrameShiftOpen : southFrameShiftClose);
+        }
+
+        private void ShowCoverFrame()
+        {
+            coverFrameRoot.gameObject.SetActive(true);
+        }
+
+        private void HideCoverFrame()
+        {
+            coverFrameRoot.gameObject.SetActive(false);
         }
     }
 }
