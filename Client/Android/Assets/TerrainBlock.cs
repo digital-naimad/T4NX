@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace T4NX
 {
-    public class TerrainBlock : CustomSprite
+    public class TerrainBlock : TileSprite
     {
         [SerializeField] private TerrainType _terrainType = TerrainType.Empty;
 

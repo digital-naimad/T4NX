@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace T4NX
 {
-    public class CustomSprite : MonoBehaviour
+    public class TileSprite : MonoBehaviour
     {
         [SerializeField] private int _FPS = 0;
 

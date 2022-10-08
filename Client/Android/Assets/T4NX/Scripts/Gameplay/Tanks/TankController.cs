@@ -1,6 +1,6 @@
 namespace T4NX
 {
-    public class TankController : CustomSprite
+    public class TankController : TileSprite
     {
         //ScreenPalette.SpriteSubpalette spriteSubpalette;
         //private string _tankistName;
