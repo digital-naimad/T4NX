@@ -8,6 +8,7 @@ namespace T4NX
     {
         //[SerializeField] private TitleScreenController titleScreenController;
         //[SerializeField] private GameplayMenu gameplayMenu;
+        [SerializeField] private Transform guiScreenRoot;
        
 
         #region MonoBehaviour life-cycle methods
@@ -173,6 +174,8 @@ namespace T4NX
         #region Private methods
         private void LaunchGame()
         {
+            guiScreenRoot.gameObject.SetActive(true); // just in case
+
             SetupGamepadListenersForTitleScreen();
             ScreenShifter.Instance.MoveIn(InitTitleScreen);
           
