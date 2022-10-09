@@ -8,6 +8,9 @@ namespace T4NX
         [SerializeField] private int _FPS = 0;
 
         [SerializeField] private bool _isBlinking = false;
+        [SerializeField] private bool _isShining = false;
+
+
 
         [SerializeField] private Vector4 _mask = Vector4.zero;
 
