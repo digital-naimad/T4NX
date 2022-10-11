@@ -45,6 +45,8 @@ namespace T4NX
         {
             Debug.Log(name + " >> LaunchGameplayMode() GameplayMode: " + GameplayMenu.Instance.CurrentlySelectedGameplayMode);
 
+            ScreenFader.Instance.ShowCoverFrame();
+
             //((GamepadEventsManager)GamepadEventsManager.Instance).SetupListeners(GameplayMenu.Instance.CurrentGameplayController.GamepadEventsListener);
             GamepadEventsManager.SetupListeners(GameplayMenu.Instance.CurrentGameplayController.GamepadEventsListener);
 

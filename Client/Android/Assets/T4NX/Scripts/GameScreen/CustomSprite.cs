@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
 namespace T4NX
 {
@@ -9,12 +6,14 @@ namespace T4NX
     {
         #region Inspector's fields
         [SerializeField] private int _FPS = 0;
+        [SerializeField] private int _NumberOfFrames;
+        [SerializeField] private Texture2D _Frames;
 
         [SerializeField] protected Color _colorA = Color.red;
         [SerializeField] protected Color _colorB = Color.green;
         [SerializeField] protected Color _colorC = Color.blue;
 
-        [SerializeField] public SpriteRenderer renderer;
+        [SerializeField] private SpriteRenderer renderer;
         #endregion
 
         #region Public accessors
@@ -46,6 +45,22 @@ namespace T4NX
             {
                 _FPS = value;
                 SetFloat(nameof(CustomSpriteReferences._FPS), _FPS);
+            }
+        }
+
+        /// <summary>
+        /// Custom shader property (number of frames in _Frames book)
+        /// </summary>
+        public int NumberOfFrames
+        {
+            get
+            {
+                return _NumberOfFrames;
+            }
+            set
+            {
+                _NumberOfFrames = value;
+                SetInt(nameof(CustomSpriteReferences._NumberOfFrames), _NumberOfFrames);
             }
         }
 
@@ -95,17 +110,19 @@ namespace T4NX
 
         #region Protected and private fields
 
-        protected Material material;
+        protected Material SpriteMaterial
+        {
+            get
+            {
+                return renderer.material;
+            }
+        }
 
         #endregion
 
         #region MonoBehaviour's callbacks
 
-        private void Awake()
-        {
-            InitShader();
-
-        }
+       
 
         #endregion
 
@@ -149,39 +166,29 @@ namespace T4NX
         
         protected void SetInt(string parameterName, int intValue)
         {
-            material.SetFloat(parameterName, intValue);
+            SpriteMaterial.SetFloat(parameterName, intValue);
         }
 
         protected void SetBool(string parameterName, bool booleanValue)
         {
-            material.SetInt(parameterName, ShaderUtils.ShaderBool(booleanValue));
+            SpriteMaterial.SetInt(parameterName, ShaderUtils.ShaderBool(booleanValue));
         }
 
         protected void SetFloat(string parameterName, float floatValue)
         {
-            material.SetFloat(parameterName, floatValue);
+            SpriteMaterial.SetFloat(parameterName, floatValue);
         }
 
         protected void SetVector(string parameterName, Vector4 vector4Value)
         {
-            material.SetVector(parameterName, vector4Value);
+            SpriteMaterial.SetVector(parameterName, vector4Value);
         }
 
         protected void SetColor(string parameterName, Color colorValue)
         {
-            material.SetColor(parameterName, colorValue);
+            SpriteMaterial.SetColor(parameterName, colorValue);
         }
 
-        
-
-        private void InitShader()
-        {
-            //if (renderer == null)
-            {
-                // renderer = GetComponent<SpriteRenderer>();
-            }
-            material = renderer.material;
-        }
         #endregion
     }
 }

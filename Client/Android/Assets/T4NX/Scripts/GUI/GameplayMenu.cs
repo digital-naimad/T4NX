@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Net.Sockets;
 using UnityEngine;
 
 namespace T4NX
@@ -36,11 +34,7 @@ namespace T4NX
             
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        #region Public methods
 
         /// <summary>
         /// Decrements gameplay mode options index and selects current GameplayModeOption
@@ -97,5 +91,6 @@ namespace T4NX
                 gameplayOptions[(int)gameplayOption].Select(false);
             }
         }
+        #endregion
     }
 }

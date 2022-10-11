@@ -50,16 +50,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _FPS: 1
-  _isBlinking: 1
-  _mask: {x: 0, y: 0, z: 0, w: 0}
-  _baseColor: {r: 1, g: 1, b: 1, a: 1}
+  _NumberOfFrames: 0
+  _Frames: {fileID: 0}
   _colorA: {r: 1, g: 0, b: 0, a: 1}
   _colorB: {r: 0, g: 1, b: 0, a: 1}
   _colorC: {r: 0, g: 0, b: 1, a: 1}
-  _noOfFrames: 2
-  _bookSize: 6
   renderer: {fileID: 4021921053361182588}
-  material: {fileID: 0}
+  _extraColorA: {r: 1, g: 0, b: 0, a: 1}
+  _extraColorB: {r: 0, g: 1, b: 0, a: 1}
+  _extraColorC: {r: 0, g: 0, b: 1, a: 1}
+  _Level: 0
+  _tankDirection: 0
+  _IsUp: 0
+  _IsDown: 0
+  _IsLeft: 0
+  _IsRight: 0
+  _isInMove: 0
+  _isBlinking: 1
+  _isShining: 0
 --- !u!1 &7821821536178695166
 GameObject:
   m_ObjectHideFlags: 0
@@ -299,7 +307,7 @@ PrefabInstance:
     - target: {fileID: 976666914404672358, guid: b1350180fc56dcf4d9376702715de126,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1350180fc56dcf4d9376702715de126, type: 3}
@@ -330,7 +338,7 @@ PrefabInstance:
     - target: {fileID: 6281553735512606854, guid: 9d03c439e32b2714e95dbdc6c5577c4d,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6281553735512606855, guid: 9d03c439e32b2714e95dbdc6c5577c4d,
         type: 3}
@@ -475,7 +483,7 @@ PrefabInstance:
     - target: {fileID: 1706902880873057567, guid: c80330a4384d5064da8f255e67425a56,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c80330a4384d5064da8f255e67425a56, type: 3}

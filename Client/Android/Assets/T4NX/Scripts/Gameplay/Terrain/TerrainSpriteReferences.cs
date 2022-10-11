@@ -1,6 +1,6 @@
 namespace T4NX
 {
-    public enum TerrainSpriteReference
+    public enum TerrainSpriteReferences
     {
         /// <summary>
         /// Float
@@ -20,20 +20,11 @@ namespace T4NX
         /// Texture2D
         /// </summary>
         _TileMask,
-        /// <summary>
-        /// Texture2D
-        /// </summary>
-        _FramesBook,
 
         /// <summary>
         /// Color
         /// </summary>
         _BaseColor,
-
-        /// <summary>
-        /// Float
-        /// </summary>
-        _NoOfFrames,
 
         /// <summary>
         /// Float

@@ -6,14 +6,13 @@ namespace T4NX
     public class TerrainSprite : CustomSprite
     {
         #region Inspector's fields
-        [SerializeField] private bool _isBlinking = false;
+        [SerializeField] private bool _IsBlinking = false;
 
-        [SerializeField] private Vector4 _mask = Vector4.zero;
+        [SerializeField] private Vector4 _Mask = Vector4.zero;
 
-        [SerializeField] private Color _baseColor = Color.white;
+        [SerializeField] private Color _BaseColor = Color.white;
 
-        [SerializeField] private int _noOfFrames = 2;
-        [SerializeField] private int _bookSize = 6;
+        [SerializeField] private int _BookSize = 6;
         #endregion
 
         #region Public accessor properties
@@ -25,13 +24,13 @@ namespace T4NX
         {
             get
             {
-                return _mask;
+                return _Mask;
             }
             set
             {
                 //Debug.Log(name + " >> Sets mask " + value);
-                _mask = value;
-                SetVector(nameof(TerrainSpriteReference._Mask), value);
+                _Mask = value;
+                SetVector(nameof(TerrainSpriteReferences._Mask), value);
             }
         }
 
@@ -39,40 +38,40 @@ namespace T4NX
         {
             get
             {
-                return _isBlinking;
+                return _IsBlinking;
             }
             set
             {
-                _isBlinking = value;
-                material.SetInt(nameof(TerrainSpriteReference._IsBlinking), ShaderUtils.ShaderBool(_isBlinking));
+                _IsBlinking = value;
+                SetBool(nameof(TerrainSpriteReferences._IsBlinking), _IsBlinking);
             }
         }
 
         #endregion
 
-        #region Protected & private properties
+        #region Protected & private accessor properties
 
         protected Color BaseColor
         {
             set
             {
-                _baseColor = value;
-                material.SetColor(nameof(TerrainSpriteReference._BaseColor), value);
+                _BaseColor = value;
+                SpriteMaterial.SetColor(nameof(TerrainSpriteReferences._BaseColor), value);
             }
             get
             {
-                return _baseColor;
+                return _BaseColor;
             }
         }
 
         #endregion
 
-
+        
 
 
         #region Public methods
 
-       
+
         #endregion
 
         #region Protected & private methods

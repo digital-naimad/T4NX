@@ -20,7 +20,7 @@ namespace T4NX
             {
                 _terrainType = value;
 
-                SetFloat(nameof(TerrainSpriteReference._TypeID), (float)_terrainType);// (float)TerrainBlockType);
+                SetFloat(nameof(TerrainSpriteReferences._TypeID), (float)_terrainType);// (float)TerrainBlockType);
                 ApplyType();
                 //Debug.Log(name + " >> terraintype " + (float)TerrainType + " >> " + TerrainType);
             }
@@ -56,6 +56,7 @@ namespace T4NX
             ApplyBaseColors(terrainSubpalette);
             //Debug.Log(">>> color names " + terrainSubpalette.AColorName + " " + terrainSubpalette.BColorName + " " + terrainSubpalette.CColorName);
 
+            NumberOfFrames = 2;
 
             //Debug.Log(">>> TerrainBlock type: " + TerrainBlockType);
             switch (TerrainBlockType)
@@ -87,6 +88,7 @@ namespace T4NX
                     break;
                 case TerrainType.Water:
                     FPS = 6;
+                    
                     Mask = Vector4.zero;
                     //BaseColor = Color.white;
                     ScreenLayer = ScreenLayers.StageBackground;

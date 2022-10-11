@@ -46,15 +46,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _FPS: 0
-  _isBlinking: 0
-  _mask: {x: 0, y: 0, z: 0, w: 0}
-  _baseColor: {r: 1, g: 1, b: 1, a: 1}
+  _NumberOfFrames: 0
+  _Frames: {fileID: 2800000, guid: 134d677ce7ff0144cbef4e2f9deec6dd, type: 3}
   _colorA: {r: 1, g: 0, b: 0, a: 1}
   _colorB: {r: 0, g: 1, b: 0, a: 1}
   _colorC: {r: 0, g: 0, b: 1, a: 1}
-  _noOfFrames: 2
-  _bookSize: 6
   renderer: {fileID: 838154685571728795}
+  _IsBlinking: 0
+  _Mask: {x: 0, y: 0, z: 0, w: 0}
+  _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+  _BookSize: 6
 --- !u!1 &5836018482507512089
 GameObject:
   m_ObjectHideFlags: 0

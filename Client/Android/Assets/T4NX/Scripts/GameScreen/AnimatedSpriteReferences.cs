@@ -2,11 +2,7 @@ namespace T4NX
 {
     public enum AnimatedSpriteReferences
     {
-        /// <summary>
-        /// Float (int, default: 14)
-        /// </summary>
-        _NumberOfFrames,
-       
+
         /// <summary>
         /// Float (int, default: 1)
         /// </summary>
@@ -21,10 +17,5 @@ namespace T4NX
         /// Color
         /// </summary>
         _BaseColor,
-
-        /// <summary>
-        /// Texture2D
-        /// </summary>
-        _Frames,
     }
 }

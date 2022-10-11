@@ -6,7 +6,6 @@ namespace T4NX
 {
     public class MultiplayerModeController : GameplayModeController, IGamepadEventsListener
     {
-
         private void Awake()
         {
             this._gamepadEventsListener = this;

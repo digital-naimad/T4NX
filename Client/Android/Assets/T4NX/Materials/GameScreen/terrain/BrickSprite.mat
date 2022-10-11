@@ -132,7 +132,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Frames:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 857d9132286750940a02bb6ba2a1582f, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _FramesBook:
@@ -188,6 +188,7 @@ Material:
     - _FPS: 0
     - _IsBlinking: 0
     - _NoOfFrames: 2
+    - _NumberOfFrames: 2
     - _QueueControl: 0
     - _QueueOffset: 0
     - _TypeID: 0

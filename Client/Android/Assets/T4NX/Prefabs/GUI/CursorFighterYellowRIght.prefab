@@ -49,16 +49,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c0d2cb1b8524204ca7ce65acf14ba69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _FPS: 0
-  _isBlinking: 0
-  _mask: {x: 0, y: 0, z: 0, w: 0}
-  _baseColor: {r: 1, g: 1, b: 1, a: 1}
+  _FPS: 32
+  _NumberOfFrames: 6
+  _Frames: {fileID: 2800000, guid: 134d677ce7ff0144cbef4e2f9deec6dd, type: 3}
   _colorA: {r: 1, g: 0, b: 0, a: 1}
   _colorB: {r: 0, g: 1, b: 0, a: 1}
   _colorC: {r: 0, g: 0, b: 1, a: 1}
-  _noOfFrames: 2
-  _bookSize: 6
   renderer: {fileID: 4021921053361182588}
+  _extraColorA: {r: 1, g: 0, b: 0, a: 1}
+  _extraColorB: {r: 0, g: 1, b: 0, a: 1}
+  _extraColorC: {r: 0, g: 0, b: 1, a: 1}
+  _Level: 0
+  _tankDirection: 0
+  _IsUp: 0
+  _IsDown: 0
+  _IsLeft: 0
+  _IsRight: 0
+  _isInMove: 1
+  _isBlinking: 0
+  _isShining: 0
 --- !u!1 &7821821536178695166
 GameObject:
   m_ObjectHideFlags: 0

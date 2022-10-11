@@ -34,6 +34,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Frames:
+        m_Texture: {fileID: 2800000, guid: 45b4c4c2ee69829458895e6afa8bb179, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _FramesBook:
         m_Texture: {fileID: 2800000, guid: 45b4c4c2ee69829458895e6afa8bb179, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -87,6 +91,7 @@ Material:
     - _IsBlinking: 0
     - _Metallic: 0
     - _NoOfFrames: 2
+    - _NumberOfFrames: 2
     - _OcclusionStrength: 1
     - _QueueControl: 0
     - _QueueOffset: 0

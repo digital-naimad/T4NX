@@ -37,6 +37,7 @@ namespace T4NX
         private Tween northOpenTween;
         private Tween southOpenTween;
 
+        #region MonoBehaviour callbacks
         private void Awake()
         {
             //InitFrames();
@@ -54,6 +55,9 @@ namespace T4NX
 
         }
 
+        #endregion
+
+        #region Public methods
         /// <summary>
         /// 
         /// </summary>
@@ -98,7 +102,27 @@ namespace T4NX
             // TODO: setup callback?
             _isOpen = false;
         }
+       
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public void ShowCoverFrame()
+        {
+            coverFrameRoot.gameObject.SetActive(true);
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void HideCoverFrame()
+        {
+            coverFrameRoot.gameObject.SetActive(false);
+        }
+
+        #endregion
+
+        #region Private methods
         private void ShowBlinds()
         {
             // NORTH FRAME
@@ -113,15 +137,7 @@ namespace T4NX
             northFrame.position = new Vector3(0, _isOpen ? northFrameShiftOpen : northFrameShiftClose);
             southFrame.position = new Vector3(0, _isOpen ? southFrameShiftOpen : southFrameShiftClose);
         }
+        #endregion
 
-        private void ShowCoverFrame()
-        {
-            coverFrameRoot.gameObject.SetActive(true);
-        }
-
-        private void HideCoverFrame()
-        {
-            coverFrameRoot.gameObject.SetActive(false);
-        }
     }
 }

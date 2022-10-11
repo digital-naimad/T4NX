@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace T4NX
 {
-    public class TankCursor : TerrainSprite
+    public class TankCursor : TankSprite
     {
         public Vector2Int Position
         {
