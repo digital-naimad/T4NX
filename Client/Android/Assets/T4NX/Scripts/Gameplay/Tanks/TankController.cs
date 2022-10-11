@@ -24,7 +24,7 @@ namespace T4NX
         // Update is called once per frame
         void Update()
         {
-            //TankDirection = TankDirection;
+            TankDirection = TankDirection;
         }
 
         //public void InitWithData(string tankistName, ColorName colorA, ColorName colorB, ColorName colorC)

@@ -53,7 +53,7 @@ namespace T4NX
             //SetFloat(TerrainBlockReference._TypeID, (float)(Random.Range((int)TerrainType.Brick, (int)TerrainType.Empty)));
 
             ScreenPalette.SpriteSubpalette terrainSubpalette = ScreenPalette.Instance.GetTerrainColors(TerrainBlockType);
-            ApplyColors(terrainSubpalette);
+            ApplyBaseColors(terrainSubpalette);
             //Debug.Log(">>> color names " + terrainSubpalette.AColorName + " " + terrainSubpalette.BColorName + " " + terrainSubpalette.CColorName);
 
 

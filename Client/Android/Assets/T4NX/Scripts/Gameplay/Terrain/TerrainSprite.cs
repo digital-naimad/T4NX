@@ -3,40 +3,24 @@ using UnityEngine;
 
 namespace T4NX
 {
-    public class TerrainSprite : MonoBehaviour
+    public class TerrainSprite : CustomSprite
     {
-        [SerializeField] private int _FPS = 0;
-
+        #region Inspector's fields
         [SerializeField] private bool _isBlinking = false;
 
         [SerializeField] private Vector4 _mask = Vector4.zero;
 
         [SerializeField] private Color _baseColor = Color.white;
-        [SerializeField] private Color _colorA = Color.red;
-        [SerializeField] private Color _colorB = Color.green;
-        [SerializeField] private Color _colorC = Color.blue;
 
         [SerializeField] private int _noOfFrames = 2;
         [SerializeField] private int _bookSize = 6;
-
-        [SerializeField] public SpriteRenderer renderer;
-        private Material material;
-
-        //private Material material { get { return renderer.material; } }
+        #endregion
 
         #region Public accessor properties
-        public ScreenLayers ScreenLayer
-        {
-            get
-            {
-                return (ScreenLayers)renderer.sortingLayerID;
-            }
-            set
-            {
-                renderer.sortingLayerID = SortingLayer.NameToID(value.ToString());
-            }
-        }
 
+        /// <summary>
+        /// [0, 0, 0, 0]
+        /// </summary>
         public Vector4 Mask
         {
             get
@@ -47,20 +31,7 @@ namespace T4NX
             {
                 //Debug.Log(name + " >> Sets mask " + value);
                 _mask = value;
-                material.SetVector(nameof(TerrainSpriteReference._Mask), value);
-            }
-        }
-
-        public int FPS
-        {
-            get
-            {
-                return _FPS;
-            }
-            set
-            {
-                _FPS = value;
-                material.SetFloat(nameof(TerrainSpriteReference._FPS), (float)_FPS);
+                SetVector(nameof(TerrainSpriteReference._Mask), value);
             }
         }
 
@@ -73,13 +44,13 @@ namespace T4NX
             set
             {
                 _isBlinking = value;
-                material.SetInt(nameof(TerrainSpriteReference._IsBlinking), _isBlinking ? 1 : 0);
+                material.SetInt(nameof(TerrainSpriteReference._IsBlinking), ShaderUtils.ShaderBool(_isBlinking));
             }
         }
 
         #endregion
 
-        #region Protected & privates properties
+        #region Protected & private properties
 
         protected Color BaseColor
         {
@@ -94,107 +65,20 @@ namespace T4NX
             }
         }
 
-        private Color AColor
-        {
-            set
-            {
-                _colorA = value;
-                material.SetColor(nameof(TerrainSpriteReference._ColorA), value);
-            }
-            get
-            {
-                return _colorA;
-            }
-        }
-
-        private Color BColor
-        {
-            set
-            {
-                _colorB = value;
-                material.SetColor(nameof(TerrainSpriteReference._ColorB), value);
-            }
-            get
-            {
-                return _colorB;
-            }
-        }
-
-        private Color CColor
-        {
-            set
-            {
-                _colorC = value;
-                material.SetColor(nameof(TerrainSpriteReference._ColorC), value);
-            }
-            get
-            {
-                return _colorC;
-            }
-        }
         #endregion
 
-        private void Awake()
-        {
-            InitShader();
-        }
 
-        private void Start()
-        {
-            //InitShader();
-        }
+
 
         #region Public methods
-        public void ApplyColors(ScreenPalette.SpriteSubpalette spriteSubpalette)
-        {
-            //BaseColor = Color.white; // ScreenPalette.Instance.GetColor(spriteSubpalette.baseColorName);
-            AColor = ScreenPalette.Instance.GetColor(spriteSubpalette.AColorName);
-            BColor = ScreenPalette.Instance.GetColor(spriteSubpalette.BColorName);
-            CColor = ScreenPalette.Instance.GetColor(spriteSubpalette.CColorName);
-        }
 
-        public void ApplyColors(ColorName colorA, ColorName colorB, ColorName colorC)
-        {
-            //BaseColor = Color.white; //ScreenPalette.Instance.GetColor(terrainSubpalette.baseColorName);
-            AColor = ScreenPalette.Instance.GetColor(colorA);
-            BColor = ScreenPalette.Instance.GetColor(colorB); 
-            CColor = ScreenPalette.Instance.GetColor(colorC);
-        }
-
-        public void ApplyColors(int colorA, int colorB, int colorC)
-        {
-            //BaseColor = Color.white; //ScreenPalette.Instance.GetColor(terrainSubpalette.baseColorName);
-            AColor = ScreenPalette.Instance.GetColor((ColorName)colorA);
-            BColor = ScreenPalette.Instance.GetColor((ColorName)colorB);
-            CColor = ScreenPalette.Instance.GetColor((ColorName)colorC);
-        }
        
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="isVisible"></param>
-        public void ChangeVisibility(bool isVisible)
-        {
-            renderer.gameObject.SetActive(isVisible);
-        }
         #endregion
 
         #region Protected & private methods
 
-        protected void SetFloat(string name, float value)
-        {
-            material.SetFloat(name, value);
-        }
 
-        private void InitShader()
-        {
-            //if (renderer == null)
-            {
-               // renderer = GetComponent<SpriteRenderer>();
-            }
-            material = renderer.material;
-        }
+
         #endregion
 
 

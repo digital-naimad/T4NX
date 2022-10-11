@@ -60,11 +60,11 @@ Material:
     - _FPS: 32
     - _IsBlinking: 0
     - _IsDown: 0
-    - _IsInMove: 1
+    - _IsInMove: 0
     - _IsLeft: 0
-    - _IsRight: 1
+    - _IsRight: 0
     - _IsShining: 0
-    - _IsUp: 1
+    - _IsUp: 0
     - _Level: 0
     - _QueueControl: 0
     - _QueueOffset: 0

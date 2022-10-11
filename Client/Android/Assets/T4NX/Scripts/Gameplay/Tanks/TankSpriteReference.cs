@@ -2,12 +2,6 @@ namespace T4NX
 {
     public enum TankSpriteReference
     {
-       
-        /// <summary>
-        /// Float
-        /// </summary>
-        _FPS,
-
         /// <summary>
         /// Float
         /// </summary>
@@ -58,26 +52,8 @@ namespace T4NX
         _ExtraColorC,
 
         /// <summary>
-        /// Color
-        /// </summary>
-        _ColorA,
-        /// <summary>
-        /// Color
-        /// </summary>
-        _ColorB,
-        /// <summary>
-        /// Color
-        /// </summary>
-        _ColorC,
-
-        /// <summary>
         /// Texture2D
         /// </summary>
         _EnemyBook,
-
-        /// <summary>
-        /// Texture2D
-        /// </summary>
-        _MainTex
     }
 }
