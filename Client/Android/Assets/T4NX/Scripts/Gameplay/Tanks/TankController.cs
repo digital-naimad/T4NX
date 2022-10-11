@@ -33,7 +33,7 @@ namespace T4NX
             //_tankistName = tankistName;
             _playerID = playerID;
 
-            ApplyColors(colorA, colorB, colorC);
+            ApplyBaseColors(colorA, colorB, colorC);
         }
 
         /// <summary>

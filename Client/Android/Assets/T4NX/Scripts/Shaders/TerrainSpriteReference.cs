@@ -1,6 +1,64 @@
 namespace T4NX
 {
-    public class TerrainBlockReference
+    public enum TerrainSpriteReference
+    {
+        /// <summary>
+        /// Float
+        /// </summary>
+        _TypeID,
+        /// <summary>
+        /// Float
+        /// </summary>
+        _FPS,
+        /// <summary>
+        /// Boolean
+        /// </summary>
+        _IsBlinking,
+        /// <summary>
+        /// Vector4
+        /// </summary>
+        _Mask,
+        /// <summary>
+        /// Texture2D
+        /// </summary>
+        _TileMask,
+        /// <summary>
+        /// Texture2D
+        /// </summary>
+        _FramesBook,
+        /// <summary>
+        /// Color
+        /// </summary>
+        _BaseColor,
+        /// <summary>
+        /// Color
+        /// </summary>
+        _ColorA,
+        /// <summary>
+        /// Color
+        /// </summary>
+        _ColorB,
+        /// <summary>
+        /// Color
+        /// </summary>
+        _ColorC,
+        /// <summary>
+        /// Texture2D/Float?
+        /// </summary>
+        _MainTexture,
+        /// <summary>
+        /// Float
+        /// </summary>
+        _NoOfFrames,
+        /// <summary>
+        /// Float
+        /// </summary>
+        _BookSize
+
+    }
+    
+    /*
+    public class TerrainSpriteReference
     {
         /// <summary>
         /// Float
@@ -56,4 +114,5 @@ namespace T4NX
         public static string _BookSize = "_BookSize";
 
     }
+    */
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace T4NX
 {
-    public class TerrainBlock : TileSprite
+    public class TerrainBlock : TerrainSprite
     {
         [SerializeField] private TerrainType _terrainType = TerrainType.Empty;
 
@@ -20,7 +20,7 @@ namespace T4NX
             {
                 _terrainType = value;
 
-                SetFloat(TerrainBlockReference._TypeID, (float)_terrainType);// (float)TerrainBlockType);
+                SetFloat(nameof(TerrainSpriteReference._TypeID), (float)_terrainType);// (float)TerrainBlockType);
                 ApplyType();
                 //Debug.Log(name + " >> terraintype " + (float)TerrainType + " >> " + TerrainType);
             }

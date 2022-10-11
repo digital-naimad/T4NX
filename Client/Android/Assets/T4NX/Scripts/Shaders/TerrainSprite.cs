@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace T4NX
 {
-    public class TileSprite : MonoBehaviour
+    public class TerrainSprite : MonoBehaviour
     {
         [SerializeField] private int _FPS = 0;
 
@@ -24,7 +24,7 @@ namespace T4NX
 
         //private Material material { get { return renderer.material; } }
 
-
+        #region Public accessor properties
         public ScreenLayers ScreenLayer
         {
             get
@@ -47,7 +47,7 @@ namespace T4NX
             {
                 //Debug.Log(name + " >> Sets mask " + value);
                 _mask = value;
-                material.SetVector(TerrainBlockReference._Mask, value);
+                material.SetVector(nameof(TerrainSpriteReference._Mask), value);
             }
         }
 
@@ -60,15 +60,33 @@ namespace T4NX
             set
             {
                 _FPS = value;
-                material.SetFloat(TerrainBlockReference._FPS, (float)_FPS);
+                material.SetFloat(nameof(TerrainSpriteReference._FPS), (float)_FPS);
             }
         }
+
+        public bool IsBlinking
+        {
+            get
+            {
+                return _isBlinking;
+            }
+            set
+            {
+                _isBlinking = value;
+                material.SetInt(nameof(TerrainSpriteReference._IsBlinking), _isBlinking ? 1 : 0);
+            }
+        }
+
+        #endregion
+
+        #region Protected & privates properties
+
         protected Color BaseColor
         {
             set
             {
                 _baseColor = value;
-                material.SetColor(TerrainBlockReference._BaseColor, value);
+                material.SetColor(nameof(TerrainSpriteReference._BaseColor), value);
             }
             get
             {
@@ -81,7 +99,7 @@ namespace T4NX
             set
             {
                 _colorA = value;
-                material.SetColor(TerrainBlockReference._ColorA, value);
+                material.SetColor(nameof(TerrainSpriteReference._ColorA), value);
             }
             get
             {
@@ -94,7 +112,7 @@ namespace T4NX
             set
             {
                 _colorB = value;
-                material.SetColor(TerrainBlockReference._ColorB, value);
+                material.SetColor(nameof(TerrainSpriteReference._ColorB), value);
             }
             get
             {
@@ -107,13 +125,14 @@ namespace T4NX
             set
             {
                 _colorC = value;
-                material.SetColor(TerrainBlockReference._ColorC, value);
+                material.SetColor(nameof(TerrainSpriteReference._ColorC), value);
             }
             get
             {
                 return _colorC;
             }
         }
+        #endregion
 
         private void Awake()
         {
@@ -125,6 +144,7 @@ namespace T4NX
             //InitShader();
         }
 
+        #region Public methods
         public void ApplyColors(ScreenPalette.SpriteSubpalette spriteSubpalette)
         {
             //BaseColor = Color.white; // ScreenPalette.Instance.GetColor(spriteSubpalette.baseColorName);
@@ -148,6 +168,7 @@ namespace T4NX
             BColor = ScreenPalette.Instance.GetColor((ColorName)colorB);
             CColor = ScreenPalette.Instance.GetColor((ColorName)colorC);
         }
+       
 
         /// <summary>
         /// 
@@ -157,6 +178,9 @@ namespace T4NX
         {
             renderer.gameObject.SetActive(isVisible);
         }
+        #endregion
+
+        #region Protected & private methods
 
         protected void SetFloat(string name, float value)
         {
@@ -171,7 +195,8 @@ namespace T4NX
             }
             material = renderer.material;
         }
+        #endregion
 
-        
+
     }
 }

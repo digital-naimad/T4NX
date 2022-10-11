@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace T4NX
 {
-    public class PlayerBase : TileSprite
+    public class PlayerBase : TerrainSprite
     {
         // Start is called before the first frame update
         void Start()
