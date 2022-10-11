@@ -24,7 +24,7 @@ namespace T4NX
         // Update is called once per frame
         void Update()
         {
-
+            TankDirection = TankDirection;
         }
 
         //public void InitWithData(string tankistName, ColorName colorA, ColorName colorB, ColorName colorC)
@@ -40,7 +40,7 @@ namespace T4NX
         /// TODO
         /// </summary>
         /// <param name="tankistColor"></param>
-        public void ApplyTankerColors(TankistColor tankerColor)
+        public void ApplyTankerColors(TankistColor tankistColor)
         {
 
         }

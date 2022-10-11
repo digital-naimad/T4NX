@@ -20,6 +20,10 @@ namespace T4NX
         /// <summary>
         /// RIGHT
         /// </summary>
-        East
+        East,
+        /// <summary>
+        /// Just a enum option counter = 4
+        /// </summary>
+        //Count
     }
 }

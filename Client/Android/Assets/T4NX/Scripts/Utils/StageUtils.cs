@@ -9,11 +9,13 @@ namespace T4NX
         //private Dictionary<char, TerrainType> _charToTerrainTypeDictionary = new Dictionary<char, TerrainType>();
         //private Dictionary< TerrainType, char> _terrainTypeToCharDictionary = new Dictionary<TerrainType, char>();
 
+        #region MonoBehaviour callbacks
         private void Awake()
         {
             //FillConversionDictionaries();
 
         }
+
         // Start is called before the first frame update
         void Start()
         {
@@ -25,22 +27,27 @@ namespace T4NX
         {
 
         }
+        #endregion
+
+       
+
+        #region Conversions
 
         /// <summary>
         /// Converts given terrainType into single character
         /// </summary>
         /// <param name="terrainType"></param>
         /// <returns></returns>
-         /*
-        public static char ConvertTerrainTypeToChar(TerrainType terrainType)
-        {
-           // if (Instance._terrainTypeToCharDictionary.Count == 0) 
-            {
-               // FillConversionDictionaries();
-            }
-            return Instance._terrainTypeToCharDictionary[terrainType];
-        }
-        */
+        /*
+       public static char ConvertTerrainTypeToChar(TerrainType terrainType)
+       {
+          // if (Instance._terrainTypeToCharDictionary.Count == 0) 
+           {
+              // FillConversionDictionaries();
+           }
+           return Instance._terrainTypeToCharDictionary[terrainType];
+       }
+       */
         /// <summary>
         /// Converts single character given via parameter into terrainType
         /// </summary>
@@ -76,6 +83,8 @@ namespace T4NX
         {
             return ConvertVector2IntTo3(position.x, position.y);
         }
+
+        #endregion
 
         /*
 

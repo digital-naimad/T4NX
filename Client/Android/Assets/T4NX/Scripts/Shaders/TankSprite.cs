@@ -226,8 +226,6 @@ namespace T4NX
 
         private Material material;
 
-        private Direction _direction = Direction.North;
-
         #endregion
 
         #region MonoBehaviour's callbacks
@@ -235,12 +233,16 @@ namespace T4NX
         private void Awake()
         {
             InitShader();
+
+            
         }
 
         private void Start()
         {
             //InitShader();
         }
+
+        
         #endregion
 
         #region Public methods
@@ -309,9 +311,12 @@ namespace T4NX
 
         protected void ApplyDirection()
         {
-            Debug.Log(name + " // TODO: implement");
+            Debug.Log(name + " >>  ApplyDirection() " + TankDirection);
 
-            material.Set
+            material.SetInt(nameof(TankSpriteReference._IsUp), ShaderUtils.ShaderBool(TankDirection == Direction.North));
+            material.SetInt(nameof(TankSpriteReference._IsDown), ShaderUtils.ShaderBool(TankDirection == Direction.South));
+            material.SetInt(nameof(TankSpriteReference._IsLeft), ShaderUtils.ShaderBool(TankDirection == Direction.West));
+            material.SetInt(nameof(TankSpriteReference._IsRight), ShaderUtils.ShaderBool(TankDirection == Direction.East));
         }
 
         private void InitShader()

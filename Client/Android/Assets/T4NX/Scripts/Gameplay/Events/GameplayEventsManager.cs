@@ -2,7 +2,7 @@
 namespace T4NX
 {
     /// <summary>
-    /// Implementation of Observer Pattern also using implementation of Singleton Pattern
+    /// Implementation of Observer Pattern
     /// </summary>
     public class GameplayEventsManager : EventsManager<GameplayEvent, IGameplayEventsListener>
     {
