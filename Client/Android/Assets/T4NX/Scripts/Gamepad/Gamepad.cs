@@ -149,24 +149,24 @@ namespace T4NX
             }
 
             // Action button B
-            if (Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.LeftBracket))
+            if (Input.GetKeyDown(KeyCode.Z) || Input.GetKeyDown(KeyCode.LeftBracket))
             {
                 _isBPressed = true;
                 GamepadEventsManager.DispatchEvent(GamepadEvent.B_Pressed);
             }
-            else if (Input.GetKeyUp(KeyCode.K) || Input.GetKeyUp(KeyCode.LeftBracket))
+            else if (Input.GetKeyUp(KeyCode.Z) || Input.GetKeyUp(KeyCode.LeftBracket))
             {
                 _isBPressed = false;
                 GamepadEventsManager.DispatchEvent(GamepadEvent.B_Released);
             }
 
             // Action button A
-            if (Input.GetKeyDown(KeyCode.L) || Input.GetKeyDown(KeyCode.RightBracket))
+            if (Input.GetKeyDown(KeyCode.X) || Input.GetKeyDown(KeyCode.RightBracket))
             {
                 _isAPressed = true;
                 GamepadEventsManager.DispatchEvent(GamepadEvent.A_Pressed);
             }
-            else if (Input.GetKeyUp(KeyCode.L) || Input.GetKeyUp(KeyCode.RightBracket))
+            else if (Input.GetKeyUp(KeyCode.X) || Input.GetKeyUp(KeyCode.RightBracket))
             {
                 _isAPressed = false;
                 GamepadEventsManager.DispatchEvent(GamepadEvent.A_Released);
