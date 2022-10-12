@@ -127,22 +127,22 @@ namespace T4NX
             }
 
             // Select & Start
-            if (Input.GetKeyDown(KeyCode.O))
+            if (Input.GetKeyDown(KeyCode.RightShift))
             {
                 _isSelectPressed = true;
                 GamepadEventsManager.DispatchEvent(GamepadEvent.Select_Pressed);
             }
-            else if (Input.GetKeyUp(KeyCode.O))
+            else if (Input.GetKeyUp(KeyCode.RightShift))
             {
                 _isSelectPressed = false;
                 GamepadEventsManager.DispatchEvent(GamepadEvent.Select_Released);
             }
-            if (Input.GetKeyDown(KeyCode.P))
+            if (Input.GetKeyDown(KeyCode.Return))
             {
                 _isStartPressed = true;
                 GamepadEventsManager.DispatchEvent(GamepadEvent.Start_Pressed);
             }
-            else if (Input.GetKeyUp(KeyCode.P))
+            else if (Input.GetKeyUp(KeyCode.Return))
             {
                 _isStartPressed = false;
                 GamepadEventsManager.DispatchEvent(GamepadEvent.Start_Released);
