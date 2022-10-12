@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -64,8 +63,11 @@ namespace T4NX
         /// </summary>
         public void Launch()
         {
-            ScreenFader.Instance.Close(() => SetupGamepadListeners());
-            _selectedStageLabel.enabled = true;// .gameObject.SetActive(true);
+            ScreenFader.Instance.Close(() => 
+            {
+                _selectedStageLabel.enabled = true;
+                SetupGamepadListeners();
+                });
         }
 
         /// <summary>

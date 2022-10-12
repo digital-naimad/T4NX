@@ -30,11 +30,13 @@ namespace T4NX
         {
             Debug.Log(name + " >> ReturnToTitleScreen()");
 
-            SetupGamepadListenersForTitleScreen();
+            ScreenFader.Instance.HideCoverFrame();
 
             GameplayMenu.Instance.SelectOption(previousMode);
 
             TitleScreenController.Instance.Show();
+
+            SetupGamepadListenersForTitleScreen();
         }
 
 
@@ -44,8 +46,6 @@ namespace T4NX
         public void LaunchSelectedGameplayMode()
         {
             Debug.Log(name + " >> LaunchGameplayMode() GameplayMode: " + GameplayMenu.Instance.CurrentlySelectedGameplayMode);
-
-            ScreenFader.Instance.ShowCoverFrame();
 
             //((GamepadEventsManager)GamepadEventsManager.Instance).SetupListeners(GameplayMenu.Instance.CurrentGameplayController.GamepadEventsListener);
             GamepadEventsManager.SetupListeners(GameplayMenu.Instance.CurrentGameplayController.GamepadEventsListener);
@@ -83,12 +83,16 @@ namespace T4NX
             else
             {
                 HideTitleScreen();
+
+                ScreenFader.Instance.ShowCoverFrame();
+
                 if (GameplayMenu.Instance.CurrentlySelectedGameplayMode == GameplayMode.StageEditor)
                 {
                     LaunchSelectedGameplayMode();
                 }
                 else
                 {
+
                     LaunchStageSelector();
                 }
                 
@@ -185,7 +189,9 @@ namespace T4NX
 
         private void InitTitleScreen()
         {
+            ScreenFader.Instance.HideCoverFrame();
             GameplayMenu.Instance.SelectOption(0);
+           
         }
 
         private void LaunchStageSelector()

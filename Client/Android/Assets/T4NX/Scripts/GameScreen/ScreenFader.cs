@@ -65,7 +65,7 @@ namespace T4NX
         {
             ApplyBlindsPositions();
             ShowBlinds();
-            ShowCoverFrame();
+            //ShowCoverFrame();
 
             northOpenTween = northFrame.DOMoveY(northFrameShiftOpen, animationDuration, true);
             northOpenTween.SetEase(Ease.Linear);
@@ -88,7 +88,6 @@ namespace T4NX
         {
             ApplyBlindsPositions();
             ShowBlinds();
-            HideCoverFrame();
 
             northOpenTween = northFrame.DOMoveY(northFrameShiftClose, animationDuration, true);
             northOpenTween.SetEase(Ease.Linear);
