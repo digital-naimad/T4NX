@@ -6,10 +6,9 @@ namespace T4NX
 {
     public class Tankist : MonoBehaviour
     {
-        [SerializeField] private string tankerName;
-        [SerializeField] private TankistColor tankerColorOption = TankistColor.Yellow;
-        [SerializeField] private ScreenPalette.SpriteSubpalette _tankerColors;
-        [SerializeField] private TankController _tank = null;
+        [SerializeField] private TankistProfileScriptableObject _tankistProfile;
+
+        public TankistProfileScriptableObject tankistProfile { get { return _tankistProfile; } }
 
         // Start is called before the first frame update
         void Start()

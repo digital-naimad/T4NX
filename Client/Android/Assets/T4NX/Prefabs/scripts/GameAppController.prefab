@@ -76,7 +76,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7985635837979497854}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1540372786
 MonoBehaviour:
@@ -203,6 +203,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6daffe4bbc6e204cb65113e23dfbb78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &96037639097543347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6223570565216635072}
+  m_Layer: 0
+  m_Name: FirstTankist
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6223570565216635072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96037639097543347}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7793942067862405925}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1820290911326335076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7793942067862405925}
+  m_Layer: 0
+  m_Name: TankistsManagement
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7793942067862405925
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1820290911326335076}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 6223570565216635072}
+  m_Father: {fileID: 7985635837979497854}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6256768153988644273
 GameObject:
   m_ObjectHideFlags: 0
@@ -212,6 +275,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3566700293819311220}
+  - component: {fileID: 349403148}
   m_Layer: 0
   m_Name: BattlefieldManagement
   m_TagString: Untagged
@@ -234,8 +298,20 @@ Transform:
   - {fileID: 7985635838288310654}
   - {fileID: 832605811}
   m_Father: {fileID: 7985635837979497854}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &349403148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6256768153988644273}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00bee04b167048f47a7574bd72367dee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7858498175609562675
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +346,7 @@ Transform:
   - {fileID: 7985635837788488232}
   - {fileID: 1697796611}
   m_Father: {fileID: 7985635837979497854}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7985635837888335002
 MonoBehaviour:
@@ -469,6 +545,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1895787262}
+  - {fileID: 7793942067862405925}
   - {fileID: 8737407488227774840}
   - {fileID: 3566700293819311220}
   - {fileID: 7985635838944264376}
@@ -504,7 +581,7 @@ PrefabInstance:
     - target: {fileID: 5224456771728410893, guid: 039494976d1ac8d458c74be242e01801,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5224456771728410893, guid: 039494976d1ac8d458c74be242e01801,
         type: 3}
