@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace T4NX
@@ -8,7 +6,7 @@ namespace T4NX
     {
         [SerializeField] private TankistProfileScriptableObject _tankistProfile;
 
-        public TankistProfileScriptableObject tankistProfile { get { return _tankistProfile; } }
+        public TankistProfileScriptableObject ProfileData { get { return _tankistProfile; } }
 
         // Start is called before the first frame update
         void Start()
@@ -22,7 +20,7 @@ namespace T4NX
 
         }
 
-        private void ApplyTankerColorsToTank()
+        public void ApplyColorsToTank()
         {
             //if (_tankerColors)
             //_tank.ApplyColors(_tankerColors);

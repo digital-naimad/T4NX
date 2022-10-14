@@ -6,12 +6,18 @@ namespace T4NX
 {
     public class GameAppController : MonoSingleton<GameAppController>, IGamepadEventsListener
     {
+        
         //[SerializeField] private TitleScreenController titleScreenController;
         //[SerializeField] private GameplayMenu gameplayMenu;
         [SerializeField] private Transform guiScreenRoot;
-       
+
 
         #region MonoBehaviour life-cycle methods
+        private void Awake()
+        {
+            CheckAndApplyAccessSettings();    
+        }
+
         void Start()
         {
             LaunchGame();
@@ -178,6 +184,11 @@ namespace T4NX
         #endregion
 
         #region Private methods
+        private void CheckAndApplyAccessSettings()
+        {
+
+        }
+
         private void LaunchGame()
         {
             guiScreenRoot.gameObject.SetActive(true); // just in case

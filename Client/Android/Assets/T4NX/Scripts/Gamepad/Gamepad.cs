@@ -65,6 +65,12 @@ namespace T4NX
         /// </summary>
         public bool IsAPressed { get { return _AButton.IsPressed || _isAPressed; } }
 
+        #region MonoBehaviour callbacks
+        private void Awake()
+        {
+            ApplyAccessProfile();
+        }
+
         // Start is called before the first frame update
         void Start()
         {
@@ -172,5 +178,13 @@ namespace T4NX
                 GamepadEventsManager.DispatchEvent(GamepadEvent.A_Released);
             }
         }
+        #endregion
+
+        #region Private methods
+        private void ApplyAccessProfile()
+        {
+
+        }
+        #endregion
     }
 }

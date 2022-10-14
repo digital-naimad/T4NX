@@ -1,12 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace T4NX
 {
-    public class TankistsManager : MonoBehaviour
+    public class TankistsManager : MonoSingleton<TankistsManager>
     {
         [SerializeField] private Tankist _firstTankist;
+
+        
 
 
         // Start is called before the first frame update
@@ -20,5 +20,7 @@ namespace T4NX
         {
 
         }
+
+       
     }
 }

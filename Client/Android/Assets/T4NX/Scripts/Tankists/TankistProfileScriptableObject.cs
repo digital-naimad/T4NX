@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
@@ -9,8 +8,11 @@ namespace T4NX
     {
         [SerializeField] private string _tankistID;
         [SerializeField] private string _tankistName;
-        [SerializeField] private TankistColor _tankistColorOption = TankistColor.Yellow;
-        [SerializeField] private ScreenPalette.SpriteSubpalette _tankistColors;
+
+        [SerializeField] private TankistColorsPreset _colorsPreset;
+        
+
+        [SerializeField] private AccessProfileScriptableObject _accessProfile;
 
         #region Public accessors
         /// <summary>
@@ -30,21 +32,38 @@ namespace T4NX
             set { _tankistName = value; }
         }
         /// <summary>
-        /// 
+        /// Getter only
         /// </summary>
-        public TankistColor TankistColorOption 
+        public TankistColorsPreset ColorsPreset 
         { 
-            get { return _tankistColorOption; } 
-            set { _tankistColorOption = value; }
+            get { return _colorsPreset; } 
+            
+        }
+
+        /// <summary>
+        /// Getter only
+        /// </summary>
+        public TankistColor TankistColors
+        {
+            get { return ColorsPreset.TankistColorOption; }
+        }
+
+        /// <summary>
+        /// Getter only
+        /// </summary>
+        public ScreenPalette.SpriteSubpalette Subpalette
+        {
+            get { return ColorsPreset.TankistColors; }
+            
         }
 
         /// <summary>
         /// 
         /// </summary>
-        public ScreenPalette.SpriteSubpalette TankistColors
+        public AccessProfileScriptableObject AccessProfile
         {
-            get { return _tankistColors; }
-            set { _tankistColors = value; }
+            get { return _accessProfile; }
+            set { _accessProfile = value; }
         }
 
         #endregion

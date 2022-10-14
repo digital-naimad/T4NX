@@ -907,52 +907,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 585b16c619069ef44b448ae39bf0be59, type: 3}
---- !u!1 &7985635837888335000 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 96037639097543347, guid: 585b16c619069ef44b448ae39bf0be59,
-    type: 3}
-  m_PrefabInstance: {fileID: 7985635837888334999}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7985635837888335001 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1820290911326335076, guid: 585b16c619069ef44b448ae39bf0be59,
-    type: 3}
-  m_PrefabInstance: {fileID: 7985635837888334999}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7985635837888335002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7985635837888335000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff9f50908608d7343a5ea631abb844ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tankerName: 1 PLAYER
-  tankerColorOption: 0
-  _tankerColors:
-    colorName: 
-    baseColorName: 0
-    AColorName: 0
-    BColorName: 0
-    CColorName: 0
-  _tank: {fileID: 0}
---- !u!114 &7985635837888335003
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7985635837888335001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53f0f7a356a995a428a62b09d0c4a330, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _firstTankist: {fileID: 7985635837888335002}
 --- !u!1001 &8675963192350262791
 PrefabInstance:
   m_ObjectHideFlags: 0
