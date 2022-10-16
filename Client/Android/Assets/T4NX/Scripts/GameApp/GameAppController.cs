@@ -135,6 +135,7 @@ namespace T4NX
         public void OnLeftPressed(params int[] data)
         {
             //isLeftPressed = true;
+            SwitchToPrevioursTankistProfile();
         }
 
         public void OnLeftReleased(params int[] data)
@@ -145,6 +146,7 @@ namespace T4NX
         public void OnRightPressed(params int[] data)
         {
             //isRightPressed = true;
+            SwitchToNextTankistProfile();
         }
 
         public void OnRightReleased(params int[] data)
@@ -181,10 +183,22 @@ namespace T4NX
         }
         #endregion
 
-        #region Private methods
+        #region Private methods - Switching between Tankist profiles
+        private void SwitchToNextTankistProfile()
+        {
+            TankistsManager.Instance.SwitchToNextProfile();
+        }
+        private void SwitchToPrevioursTankistProfile()
+        {
+            TankistsManager.Instance.SwitchToPreviousProfile();
+        }
+
+        #endregion
+
+        #region Private methods - other
         private void CheckAndApplyAccessSettings()
         {
-
+            
         }
 
         private void LaunchGame()

@@ -130,6 +130,7 @@ namespace T4NX
         public void ApplyBaseColors(ScreenPalette.SpriteSubpalette spriteSubpalette)
         {
             //BaseColor = Color.white; // ScreenPalette.Instance.GetColor(spriteSubpalette.baseColorName);
+            //ColorName test = spriteSubpalette.BColorName;
             AColor = ScreenPalette.Instance.GetColor(spriteSubpalette.AColorName);
             BColor = ScreenPalette.Instance.GetColor(spriteSubpalette.BColorName);
             CColor = ScreenPalette.Instance.GetColor(spriteSubpalette.CColorName);

@@ -56,7 +56,7 @@ namespace T4NX
         /// </summary>
         public void ApplyTankistName()
         {
-
+            GameplayMenu.Instance.UpdateTankistName(ProfileData.TankistName);
         }
 
         /// <summary>
@@ -64,9 +64,7 @@ namespace T4NX
         /// </summary>
         public void ApplyColorsToTank()
         {
-            //if (_tankerColors)
-            //_tank.ApplyColors(_tankerColors);
-
+            GameplayMenu.Instance.UpdateTankistAvatar(ColorsPreset.TankistColors);
         }
 
         

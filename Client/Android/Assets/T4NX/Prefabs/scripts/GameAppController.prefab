@@ -248,6 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _tankistProfile: {fileID: 11400000, guid: 3f6f26b3cbc53b94597018542900747c, type: 2}
+  _ownedTank: {fileID: 0}
 --- !u!1 &1820290911326335076
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,6 +295,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _firstTankist: {fileID: 1133440517}
+  _secondTankist: {fileID: 0}
+  _tankistsProfiles:
+  - {fileID: 11400000, guid: 3f6f26b3cbc53b94597018542900747c, type: 2}
+  - {fileID: 11400000, guid: 1ce2109699c5e0c4288d74332727f72d, type: 2}
+  - {fileID: 11400000, guid: 7ea2b866d5d7f494e95035968c5dec59, type: 2}
+  - {fileID: 11400000, guid: 5ca79ccc13655154883f705c28560b99, type: 2}
+  - {fileID: 11400000, guid: 16a7c4ba772855f4282de8fd37afac0e, type: 2}
+  - {fileID: 11400000, guid: 20fc5a0c6abc35a469c4592ea6759f97, type: 2}
+  - {fileID: 11400000, guid: 1283a59a17d70054d86d0ea1b699c990, type: 2}
+  - {fileID: 11400000, guid: 8773c76c9e0942f41a8c9028a9c4d485, type: 2}
+  - {fileID: 11400000, guid: 9c94c0ff6074f2a4482eb04dd868c267, type: 2}
+  - {fileID: 11400000, guid: f6c4512a240967a4ca23e73387be44c8, type: 2}
+  - {fileID: 11400000, guid: 8981b989851577c46aef8abb918d667a, type: 2}
+  - {fileID: 11400000, guid: 473d49bd31445df4980b414f9e375dcf, type: 2}
+  - {fileID: 11400000, guid: 5e3447294547d8e42a210f4cb182e086, type: 2}
+  - {fileID: 11400000, guid: ec66e874edcf4aa4aa383929a200990b, type: 2}
+  - {fileID: 11400000, guid: 037a2ed014d1da24bb3b9976c5e25e2f, type: 2}
 --- !u!1 &6256768153988644273
 GameObject:
   m_ObjectHideFlags: 0

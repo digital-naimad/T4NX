@@ -18,8 +18,7 @@ namespace T4NX
         [SerializeField] private ScreenPaletteData screenPaletteData;
 
         [SerializeField] private List<SpriteSubpalette> terrainPalettes = new List<SpriteSubpalette>();
-        [SerializeField] private List<SpriteSubpalette> tankersPalettes = new List<SpriteSubpalette>();
-
+       
         [SerializeField] private Color screenAmbientColor = Color.white;
 
         #region MonoBehaviour stuff
@@ -57,13 +56,6 @@ namespace T4NX
             //Debug.Log(">> terrain subpalette type: " + terrainType);
             return terrainPalettes[(int)terrainType];//terrainPalettes[Mathf.Clamp((int)terrainType, 0, terrainPalettes.Count) ];
         }
-
-        public SpriteSubpalette GetTankerColors(TankistColor colorOption)
-        {
-            Debug.Log(">> tanker subpalette option: " + colorOption);
-            return tankersPalettes[(int)colorOption % tankersPalettes.Count];
-        }
-
         #endregion
 
         #region Private methods

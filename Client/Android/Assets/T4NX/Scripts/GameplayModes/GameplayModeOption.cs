@@ -30,27 +30,40 @@ namespace T4NX
             } 
         }
         */
+
+        #region Public access
         public GameplayModeController Controller { get => controller; }
         public TextMeshProUGUI OptionLabelText { get => optionLabelText; }
         public TankCursor Cursor { get => cursor; }
+        #endregion
 
-
+        #region Public methods 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="isSelected"></param>
         public void Select(bool isSelected)
         {
-            cursor.gameObject.SetActive(isSelected);
+            cursor.GetComponentInChildren<SpriteRenderer>().enabled = isSelected;
+        }
+
+        /// <summary>
+        /// Sets text given by parameter in place of "1 PLAYER" text
+        /// </summary>
+        /// <param name="tankistName"></param>
+        public void UpdateTankistNameLabel(string tankistName)
+        {
+            OptionLabelText.text = tankistName;
         }
 
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="labelText"></param>
-        public void UpdateLabel(string labelText)
+        public void UpdateCursorColors(ScreenPalette.SpriteSubpalette spriteSubpalette)
         {
-            OptionLabelText.text = labelText;
+            Cursor.ApplyBaseColors(spriteSubpalette);
         }
+
+        #endregion
     }
 }

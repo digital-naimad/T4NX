@@ -20,6 +20,6 @@ MonoBehaviour:
       colorName: PURPLE TANK
       baseColorName: 1
       AColorName: 13
-      BColorName: 14
-      CColorName: 15
+      BColorName: 15
+      CColorName: 16
   _accessProfile: {fileID: 0}

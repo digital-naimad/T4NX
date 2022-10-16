@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace T4NX
@@ -7,6 +8,7 @@ namespace T4NX
         [SerializeField] private TankistController _firstTankist;
         [SerializeField] private TankistController _secondTankist;
 
+        //[SerializeField] private List<TankistProfileData> _tankistsProfiles = new List<TankistProfileData>();
         [SerializeField] private TankistProfileData[] _tankistsProfiles;
 
         private byte _currentProfileIndex = 0;
