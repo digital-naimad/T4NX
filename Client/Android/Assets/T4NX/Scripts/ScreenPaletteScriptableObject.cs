@@ -4,7 +4,7 @@ using UnityEngine;
 namespace T4NX
 {
     [CreateAssetMenu(fileName = "ScreenPalette", menuName = "Palettes/Palette", order = 1)]
-    public class ScreenPaletteScriptableObject : ScriptableObject
+    public class ScreenPaletteData : ScriptableObject
     {
         public string name;
         

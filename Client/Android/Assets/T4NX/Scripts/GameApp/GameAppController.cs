@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace T4NX
@@ -25,10 +23,10 @@ namespace T4NX
         }
 
 
-        void Update()
-        {
+        //void Update()
+        //{
 
-        }
+       // }
         #endregion
 
         #region Public methods

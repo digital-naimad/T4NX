@@ -2,10 +2,19 @@ namespace T4NX
 {
     public enum TankistColor 
     {
-       Yellow,
-       Green,
-       //Count
-       //Blue,
-       //Pink,
+        Yellow,
+        Green,
+        Pink,
+        Blue,
+        Purple,
+        Rose,
+        SkyBlue,
+        Orange,
+        Cyan,
+        UglyGreen,
+        LightGreen,
+        Brown,
+        White,
+        Count
     }
 }

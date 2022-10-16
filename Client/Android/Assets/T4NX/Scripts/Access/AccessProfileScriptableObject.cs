@@ -5,7 +5,7 @@ namespace T4NX
 {
 
     [CreateAssetMenu(fileName = "AccessProfile_", menuName = "Access/Profile", order = 4)]
-    public class AccessProfileScriptableObject : ScriptableObject
+    public class AccessProfileData : ScriptableObject
     {
         [SerializeField] private List<AccessScope> _permissions = new List<AccessScope>();
 

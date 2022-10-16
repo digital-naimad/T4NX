@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static T4NX.ScreenPalette;
 
 namespace T4NX
 {
@@ -17,37 +15,41 @@ namespace T4NX
             public ColorName CColorName;
         }
 
-        [SerializeField] private ScreenPaletteScriptableObject screenPaletteScriptableObject;
+        [SerializeField] private ScreenPaletteData screenPaletteData;
 
         [SerializeField] private List<SpriteSubpalette> terrainPalettes = new List<SpriteSubpalette>();
         [SerializeField] private List<SpriteSubpalette> tankersPalettes = new List<SpriteSubpalette>();
 
         [SerializeField] private Color screenAmbientColor = Color.white;
 
+        #region MonoBehaviour stuff
         private void Awake()
         {
             SetupLightning();
         }
+        /*
+       // Start is called before the first frame update
+       void Start()
+       {
 
-        // Start is called before the first frame update
-        void Start()
-        {
-            
-            
-          
-        }
 
-        // Update is called once per frame
-        void Update()
-        {
-            //SetupLightning();
 
-        }
+       }
 
+       // Update is called once per frame
+       void Update()
+       {
+           //SetupLightning();
+
+       }
+       */
+        #endregion
+
+        #region Public methods - GETTERS
         public Color GetColor(ColorName colorName)
         {
             //Debug.Log("Color number: " + (int)colorName);
-            return screenPaletteScriptableObject.GetColor((int)colorName);
+            return screenPaletteData.GetColor((int)colorName);
         }
 
         public SpriteSubpalette GetTerrainColors(TerrainType terrainType)
@@ -62,10 +64,14 @@ namespace T4NX
             return tankersPalettes[(int)colorOption % tankersPalettes.Count];
         }
 
+        #endregion
+
+        #region Private methods
+
         private void SetupLightning()
         {
             RenderSettings.ambientLight = screenAmbientColor;
         }
-
+        #endregion
     }
 }

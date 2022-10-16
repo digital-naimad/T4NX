@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using PlayerIOClient;
 
 namespace T4NX
 {
@@ -28,6 +25,8 @@ namespace T4NX
             get { return _wasStageModified; }
         }
 
+        #region MonoBehaviour's stuff
+
         private void Awake()
         {
             BlockPattern.FillPatternsDictionary();    
@@ -44,11 +43,7 @@ namespace T4NX
         {
 
         }
-
-        public void SpawnTank()
-        {
-
-        }
+        #endregion
 
         /// <summary>
         /// Fullfills stage terrain with blocks grid defined in CurrentStage. 

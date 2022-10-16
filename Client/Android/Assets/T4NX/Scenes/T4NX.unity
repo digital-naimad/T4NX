@@ -796,6 +796,10 @@ PrefabInstance:
       propertyPath: worldRoot
       value: 
       objectReference: {fileID: 1251755797}
+    - target: {fileID: 834504244, guid: 585b16c619069ef44b448ae39bf0be59, type: 3}
+      propertyPath: _tankistsProfiles.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 1697796612, guid: 585b16c619069ef44b448ae39bf0be59, type: 3}
       propertyPath: _selectedStageLabel
       value: 
@@ -968,6 +972,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4137791161517548506, guid: 6d965811201bade428603986f6ad3849,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4187127396949409724, guid: 6d965811201bade428603986f6ad3849,
         type: 3}

@@ -4,7 +4,7 @@ using UnityEditor;
 namespace T4NX
 {
     [CreateAssetMenu(fileName = "TankistProfile_", menuName = "Tankist/Profile", order = 3)]
-    public class TankistProfileScriptableObject : ScriptableObject
+    public class TankistProfileData : ScriptableObject
     {
         [SerializeField] private string _tankistID;
         [SerializeField] private string _tankistName;
@@ -12,7 +12,7 @@ namespace T4NX
         [SerializeField] private TankistColorsPreset _colorsPreset;
         
 
-        [SerializeField] private AccessProfileScriptableObject _accessProfile;
+        [SerializeField] private AccessProfileData _accessProfile;
 
         #region Public accessors
         /// <summary>
@@ -60,7 +60,7 @@ namespace T4NX
         /// <summary>
         /// 
         /// </summary>
-        public AccessProfileScriptableObject AccessProfile
+        public AccessProfileData AccessProfile
         {
             get { return _accessProfile; }
             set { _accessProfile = value; }
@@ -68,7 +68,7 @@ namespace T4NX
 
         #endregion
 
-        public TankistProfileScriptableObject()
+        public TankistProfileData()
         {
             //Debug.Log(name + " >> CALLS CONSTRUCTOR");
            

@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ad3ff7e6fde6c51438162b262dfe7ea7, type: 3}
-  m_Name: TankistProfileScriptableObject
+  m_Name: UglyGreenTankistProfileData
   m_EditorClassIdentifier: 
-  _tankistID: 
-  _tankistName: 
+  _tankistID: 9
+  _tankistName: UGLY GREEN PLAYER
   _colorsPreset:
-    _tankistColorOption: 0
+    _tankistColorOption: 9
     _tankistColors:
-      colorName: 
+      colorName: UGLY GREEN TANK
       baseColorName: 0
-      AColorName: 0
-      BColorName: 0
-      CColorName: 0
-  _accessProfile: {fileID: 11400000, guid: 669e4e1dd739f5849b0449ec94926299, type: 2}
+      AColorName: 45
+      BColorName: 46
+      CColorName: 48
+  _accessProfile: {fileID: 0}
