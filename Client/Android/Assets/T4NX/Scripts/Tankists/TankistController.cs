@@ -47,7 +47,7 @@ namespace T4NX
         {
             _tankistProfile = profileData;
 
-            ApplyTankistName();
+            //ApplyTankistName();
             ApplyColorsToTank();
         }
 

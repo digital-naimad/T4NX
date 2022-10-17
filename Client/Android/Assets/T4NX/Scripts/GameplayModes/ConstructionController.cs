@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace T4NX
@@ -18,11 +15,14 @@ namespace T4NX
         [SerializeField] private Vector2Int _cursorAreaMin = Vector2Int.one * 16;
         [SerializeField] private Vector2Int _cursorAreaMax = Vector2Int.one * 208;
 
-        // internal - framerate of a cursor position change 
-        private float nextUpdateTime = 0.0f;
-        [SerializeField] private float inputUpdateInterval = 1 / 30f;
+        [SerializeField] private float inputUpdateInterval = .1f; //1 / 30f;
 
         [SerializeField] private BlockType currentBlockPatternType = BlockType.Empty;
+
+        #region Private fields - internal helpers
+
+        // internal - framerate of a cursor position change 
+        private float nextUpdateTime = 0.0f;
 
         // internal - gamepad button states
         private bool isUpPressed = false;
@@ -34,6 +34,7 @@ namespace T4NX
         private bool isAPressed = false;
 
         private bool wasCursorMoved = true;
+        #endregion
 
         private Vector2Int CursorPosition { get { return _cursorPosition; } }
         private Vector2Int CurrentBlockIndex { get { return new Vector2Int(CursorPosition.x / _cellSize.x, CursorPosition.y / _cellSize.y); } }

@@ -9,6 +9,24 @@ namespace T4NX
         //[SerializeField] private GameplayMenu gameplayMenu;
         [SerializeField] private Transform guiScreenRoot;
 
+        #region Private fields >> IGamepadEventsListener's helpers
+
+        /*
+        [SerializeField] private float inputUpdateInterval = .1f;
+
+        // internal - framerate of a cursor position change 
+        private float nextUpdateTime = 0.0f;
+
+        private bool isUpPressed = false;
+        private bool isDownPressed = false;
+        private bool isLeftPressed = false;
+        private bool isRightPressed = false;
+
+        private bool isBPressed = false;
+        private bool isAPressed = false;
+        */
+
+        #endregion
 
         #region MonoBehaviour life-cycle methods
         private void Awake()
@@ -22,11 +40,35 @@ namespace T4NX
 
         }
 
+        /*
+        void Update()
+        {
 
-        //void Update()
-        //{
+            if (Time.time > nextUpdateTime)
+            {
+                nextUpdateTime += inputUpdateInterval;
 
-       // }
+                if (isUpPressed)
+                {
+                    SwitchToNextSpawnSpotOption();
+                }
+                else if (isDownPressed)
+                {
+                    SwitchToPreviousSpawnSpotOption();
+                }
+
+                if (isLeftPressed)
+                {
+                    SwitchToPrevioursTankistProfile();
+                }
+                else if (isRightPressed)
+                {
+                    SwitchToNextTankistProfile();
+                }
+            }
+        }
+        */
+
         #endregion
 
         #region Public methods
@@ -113,6 +155,7 @@ namespace T4NX
         public void OnUpPressed(params int[] data)
         {
             //isUpPressed = true;
+            SwitchToNextSpawnSpotOption();
         }
 
         public void OnUpReleased(params int[] data)
@@ -123,6 +166,7 @@ namespace T4NX
         public void OnDownPressed(params int[] data)
         {
             //isDownPressed = true;
+            SwitchToPreviousSpawnSpotOption();
         }
 
         public void OnDownReleased(params int[] data)
@@ -191,6 +235,18 @@ namespace T4NX
         private void SwitchToPrevioursTankistProfile()
         {
             TankistsManager.Instance.SwitchToPreviousProfile();
+        }
+
+        #endregion
+
+        #region Private methods - Switching between Spawn Spot Options
+        private void SwitchToNextSpawnSpotOption()
+        {
+            SpawnSpotSelector.Instance.SwitchToNextOption();
+        }
+        private void SwitchToPreviousSpawnSpotOption()
+        {
+            SpawnSpotSelector.Instance.SwitchToPreviousOption();
         }
 
         #endregion

@@ -1,9 +1,10 @@
-using TMPro;
+using System;
 using UnityEngine;
+using TMPro;
 
 namespace T4NX
 {
-    [System.Serializable]
+    [Serializable]
     public class GameplayModeOption
     {
         [SerializeField] private GameplayMode _gameplayMode;
